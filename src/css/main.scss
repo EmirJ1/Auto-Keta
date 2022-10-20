@@ -1,111 +1,85 @@
-@import url('http://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
-*
-{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-.banner{
-    width: 100%;
-    height: 100vh;
-    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url(backgroung.jpg);
-    background-size: cover;
-    background-position: center;
-}
-.navbar{
-    width: 85%;
-    margin: auto;
-    padding: 35px 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.vetura{
-    width: 195px;
-    cursor: pointer;
-}
-.navbar ul li{
-    list-style: none;
-    display: inline-block;
-    margin: 0 20px;
-    position: relative;
-}
-.navbar ul li a{
-    text-decoration: none;
-    color: #fff;
-    text-transform: uppercase;
-}
-.navbar ul li::after{
-    content: '';
-    height: 3px;
-    width: 0;
-    background: rgb(194, 194, 194);
-    position: absolute;
-    left: 0;
-    bottom: -10px;
-    transition: 0.5s;
-}
-.navbar ul li:hover::after{
-    width: 100%;
-}
-.content{
-    width: 100%;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    text-align: center;
-    color: #fff;
-}
-.content h1{
-    font-size: 70px;
-    margin-top: 80px;
-}
-.content p{
-    margin: 20px auto;
-    font-weight: 100;
-    line-height: 25px;
-}
-button{
-    width: 200px;
-    padding: 15px 0;
-    text-align: center;
-    margin:20px 10px;
-    border-radius: 25px;
-    font-weight: bold;
-    border: 2px solid rgb(194, 194, 194);
-    background: transparent;
-    color: #fff;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-}
-span{
-    background: rgb(194, 194, 194);
-    height: 100%;
-    width: 0;
-    border-radius: 25px;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    z-index: -1;
-    transition: 0.5s;
-}
-button:hover span{
-    width: 100%;
-}
-button:hover{
-    border: none;
-}
-.banne{
-    width: 100%;
-    height: 100vh;
-    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url(banne.jpg);
-    background-size: cover;
-    background-position: center;
-}
+/*
+ *
+ *      ________            ______
+ *      ___  __/_____ _________  /______  ______________________
+ *      __  /  _  __ `/  ___/_  __ \_  / / /  __ \_  __ \_  ___/
+ *      _  /   / /_/ // /__ _  / / /  /_/ // /_/ /  / / /(__  )
+ *      /_/    \__,_/ \___/ /_/ /_/_\__, / \____//_/ /_//____/
+ *                                 /____/
+ *
+ *    TABLE OF CONTENTS
+ *
+ *    1. External Library Includes
+ *       - Reset.css | http://meyerweb.com/eric/tools/css/reset/
+ *    2. Tachyons Modules
+ *    3. Variables
+ *       - Media Queries
+ *       - Colors
+ *    4. Debugging
+ *       - Debug all
+ *       - Debug children
+ *
+ */
 
 
+/* External Library Includes */
+@use './imports/_reset';
 
+/* Modules */
+@use './imports/_box-sizing';
+@use './imports/_images';
+@use './imports/_background-size';
+@use './imports/_background-position';
+@use './imports/_outlines';
+@use './imports/_borders';
+@use './imports/_border-radius';
+@use './imports/_border-style';
+@use './imports/_border-widths';
+@use './imports/_border-colors';
+@use './imports/_code';
+@use './imports/_coordinates';
+@use './imports/_clears';
+@use './imports/_display';
+@use './imports/_flexbox';
+@use './imports/_floats';
+@use './imports/_font-style';
+@use './imports/_font-weight';
+@use './imports/_forms';
+@use './imports/_heights';
+@use './imports/_line-height';
+@use './imports/_links';
+@use './imports/_lists';
+@use './imports/_max-widths';
+@use './imports/_widths';
+@use './imports/_overflow';
+@use './imports/_position';
+@use './imports/_opacity';
+@use './imports/_spacing';
+@use './imports/_text-decoration';
+@use './imports/_text-align';
+@use './imports/_text-transform';
+@use './imports/_type-scale';
+@use './imports/_typography';
+@use './imports/_utilities';
+@use './imports/_visibility';
+@use './imports/_white-space';
+@use './imports/_vertical-align';
+@use './imports/_states';
+@use './imports/_z-index';
+@use './imports/_styles';
+@use './imports/_buttons';
+@use './imports/_svg';
+@use './imports/_cms';
 
+/* Variables */
+/* Importing here will allow you to override any variables in the modules */
+@use './imports/_colors';
+@use './imports/_media-queries';
+@use './imports/_variables';
 
+/* Debugging */
+@use './imports/_debug-children';
+@use './imports/_debug-grid';
+
+/* Uncomment out the line below to help debug layout issues */
+/*@use './imports/_debug';*/
