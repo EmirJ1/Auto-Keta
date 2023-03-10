@@ -14,7 +14,6 @@ export default function index({ cars }) {
         <div className="row">
           <div className="col-12">
             <button onClick={() => setAdd(false)}>Add</button>
-
             {!add && <Add setAdd={setAdd} />}
             <Pagination cars={cars} />
           </div>

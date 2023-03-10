@@ -1,7 +1,7 @@
 import axios from 'axios'
+import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
-import SVG from 'react-inlinesvg'
 
 import Button from '@/components/Button'
 import Layout from '@/components/layout/Layout'
@@ -28,7 +28,13 @@ export default function Login() {
       <div className="container">
         <div className="row md:my-20 justify-center">
           <div className="lg:col-6 bg-gray-400 text-center rounded-xl py-5">
-            <SVG src="/svg/person.svg" className="w-40 h-40 mx-auto" />
+            <Image
+              src="/images/emir.jpg"
+              width={160}
+              height={160}
+              className="w-40 h-auto rounded-full mx-auto"
+              alt="emir"
+            />
             <input
               type="text"
               placeholder="Username"
@@ -44,11 +50,7 @@ export default function Login() {
             <Button className="w-3/4 mt-5" onClick={() => handleClick()}>
               Log In
             </Button>
-            {error ? (
-              <p className="mt-5">Username or password is incorrect</p>
-            ) : (
-              <p className="mt-5"></p>
-            )}
+            {error ? <p className="mt-5">Tej nuk ije Emiri</p> : <p className="mt-5"></p>}
           </div>
         </div>
       </div>
