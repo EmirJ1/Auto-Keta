@@ -4,10 +4,12 @@ import React, { useState } from 'react'
 import usePagination from 'utils/usePagination'
 
 import Button from './Button'
+import ProductEdit from './ProductEdit'
 export default function Pagination({ cars }) {
   const _DATA = usePagination(cars, 10)
   const arr = Array.from({ length: _DATA.maxPage }, (_, i) => i + 1)
   const [carsList, setCarsList] = useState(cars)
+  //   const [edit, setEdit] = useState(true)
 
   async function handleDelete(id) {
     try {
@@ -49,7 +51,7 @@ export default function Pagination({ cars }) {
                 <td>{car.transmission}</td>
                 <td>{car.price.toLocaleString()}.00 € </td>
                 <td>
-                  <button>Edit</button>
+                  <ProductEdit product={car} />
                   <button className="ml-2" onClick={() => handleDelete(car._id)}>
                     Delete
                   </button>
@@ -67,7 +69,7 @@ export default function Pagination({ cars }) {
           <Button
             key={e}
             className={`mr-4 ${
-              _DATA.currentPage === e ? 'bg-pink-500 text-white' : 'bg-white text-black'
+              _DATA.currentPage === e ? 'bg-pink-500 text-black' : 'bg-white text-black'
             }`}
             onClick={() => _DATA.jump(e)}
           >
