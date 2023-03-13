@@ -48,7 +48,7 @@ export default function Login() {
               onChange={(e) => setPassword(e.target.value)}
             />
             <Button className="w-3/4 mt-5" onClick={() => handleClick()}>
-              Log In
+              Shtejpe
             </Button>
             {error ? <p className="mt-5">Hec be hupuuuu</p> : <p className="mt-5"></p>}
           </div>
