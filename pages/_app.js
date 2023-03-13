@@ -17,7 +17,7 @@ function MyApp({ Component, pageProps }) {
           type: 'website',
           locale: 'en_EN',
           url: '',
-          site_name: 'KETA',
+          site_name: 'Next Starter',
           description: 'Website description here',
         }}
       />
