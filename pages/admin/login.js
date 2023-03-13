@@ -50,7 +50,7 @@ export default function Login() {
             <Button className="w-3/4 mt-5" onClick={() => handleClick()}>
               Log In
             </Button>
-            {error ? <p className="mt-5">Tej nuk ije Emiri</p> : <p className="mt-5"></p>}
+            {error ? <p className="mt-5">Hec be hupuuuu</p> : <p className="mt-5"></p>}
           </div>
         </div>
       </div>
