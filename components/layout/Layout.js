@@ -1,6 +1,8 @@
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
 
+import FooterSection from '../sections/FooterSection'
+
 const Navigation = dynamic(() => import('@/components/layout/Navigation'), { ssr: false })
 
 export default function Layout({ children, title = null }) {
@@ -27,6 +29,7 @@ export default function Layout({ children, title = null }) {
         {children}
 
         {/* Footer here */}
+        <FooterSection />
       </div>
     </>
   )
