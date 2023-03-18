@@ -67,7 +67,7 @@ export default function Car({ car }) {
                 <p>KM:</p>
                 <p>Ngjyra:</p>
               </div>
-              <div className="col-6 space-y-2 font-bold">
+              <div className="col-6 space-y-2 font-bold capitalize">
                 <p>{car.mark}</p>
                 <p>{car.model} VII</p>
                 <p>{car.year}</p>
