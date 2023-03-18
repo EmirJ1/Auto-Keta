@@ -1,5 +1,6 @@
-import Car from 'models/Car'
 import dbConnect from 'utils/mongo'
+
+import Car from '../../../models/Car'
 
 export default async function handler(req, res) {
   const {
@@ -8,22 +9,16 @@ export default async function handler(req, res) {
   } = req
 
   await dbConnect()
+
   if (method === 'GET') {
     try {
-      const car = await Car.find()
+      const car = await Car.findById(id)
       res.status(200).json(car)
     } catch (err) {
       res.status(500).json(err)
     }
   }
-  if (method === 'POST') {
-    try {
-      const car = await Car.create(req.body)
-      res.status(201).json(car)
-    } catch (err) {
-      res.status(500).json(err)
-    }
-  }
+
   if (method === 'PUT') {
     try {
       const car = await Car.findByIdAndUpdate(id, req.body, {
@@ -34,6 +29,7 @@ export default async function handler(req, res) {
       res.status(500).json(err)
     }
   }
+
   if (method === 'DELETE') {
     try {
       await Car.findByIdAndDelete(id)

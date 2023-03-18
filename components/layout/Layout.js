@@ -11,7 +11,7 @@ export default function Layout({ children, title = null }) {
   return (
     <>
       <Head>
-        <title>{title ? `${title} - Next Starter` : 'Next Starter'}</title>
+        <title>{title ? `${title} - Auto Keta` : 'Auto Keta'}</title>
 
         {/* Favicons */}
         <link rel="icon" href="/favicons/fav-32.ico" sizes="32x32" />
