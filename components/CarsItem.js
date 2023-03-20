@@ -8,9 +8,10 @@ export default function CarsItem({ cars }) {
     <div className="lg:col-4 md:col-6 mb-8 ">
       <Link href={`/cars/${cars._id}`} legacyBehavior>
         <a>
+          {/* {console.log(cars[3].images.reduce((a, v) => ({ ...a, [v]: v }), {}))} */}
           <div className="bg-white p-1 rounded-xl">
             <Image
-              src="/images/golf7.jpg"
+              src={cars.images[0].url}
               alt="car"
               width={300}
               height={450}

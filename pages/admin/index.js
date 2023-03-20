@@ -15,6 +15,7 @@ export default function index({ cars }) {
           <div className="col-12">
             <button onClick={() => setAdd(false)}>Add</button>
             {!add && <Add setAdd={setAdd} />}
+            {/* {console.log(cars[4].images[0].url)} */}
             <Pagination cars={cars} />
           </div>
         </div>
