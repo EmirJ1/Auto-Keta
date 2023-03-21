@@ -39,7 +39,7 @@ export default function Car({ car }) {
                 <p>{car.model}</p>
                 <p>{car.year}</p>
                 <p>{car.fueltype}</p>
-                <p>1.6TDI</p>
+                <p>{car.motor}</p>
                 <p>{car.transmission}</p>
                 <p>{car.chair}</p>
                 <p>{car.km}</p>
