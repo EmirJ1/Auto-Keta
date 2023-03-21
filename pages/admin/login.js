@@ -14,7 +14,7 @@ export default function Login() {
 
   async function handleClick() {
     try {
-      await axios.post('https://auto.keta.mk/api/login', {
+      await axios.post('https://auto.keta.mk0/api/login', {
         username,
         password,
       })

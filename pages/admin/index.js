@@ -35,7 +35,7 @@ export async function getServerSideProps(ctx) {
       },
     }
   }
-  const carsProd = await axios.get('https://auto.keta.mk/api/cars')
+  const carsProd = await axios.get('https://auto.keta.mk0/api/cars')
   return {
     props: {
       cars: carsProd.data,

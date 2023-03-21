@@ -31,7 +31,7 @@ export default function ProductEdit({ product }) {
         chair,
       }
 
-      await axios.put('https://auto.keta.mk/api/cars/' + id, Product)
+      await axios.put('https://auto.keta.mk0/api/cars/' + id, Product)
       Router.reload()
     } catch (err) {
       // eslint-disable-next-line no-console
@@ -76,6 +76,10 @@ export default function ProductEdit({ product }) {
                 <option value="vw">VW</option>
                 <option value="hyundai">Hyundai</option>
                 <option value="toyota">Toyota</option>
+                <option value="toyota">Suzuki</option>
+                <option value="toyota">Mazda</option>
+
+
 
 
               </select>

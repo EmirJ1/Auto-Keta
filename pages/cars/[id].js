@@ -69,17 +69,17 @@ export default function Car({ car }) {
               </div>
               <div className="col-6 space-y-2 font-bold capitalize">
                 <p>{car.mark}</p>
-                <p>{car.model} VII</p>
+                <p>{car.model} </p>
                 <p>{car.year}</p>
                 <p>{car.fueltype}</p>
-                <p>1.6TDI</p>
+                <p>{car.motor}</p>
                 <p>{car.transmission}</p>
-                <p>5</p>
+                <p>{car.chair}</p>
                 <p>{car.km}</p>
-                <p>E Zezë</p>
+                <p>{car.color}</p>
               </div>
               <div className="col-10 border-t-2 border-gray-900 mt-5">
-                <p className="font-bold text-xl text-center mt-5">14,000 €</p>
+                <p className="font-bold text-xl text-center mt-5">{car.price.toLocaleString('en-US')} €</p>
               </div>
             </div>
             {/* Година: 2015 Марка: RENAULT Модел: CLIO Гориво: ДИЗЕЛ Мотор: 1.5dCi 90HP Кубикажа: 1461
@@ -128,7 +128,7 @@ export default function Car({ car }) {
 export async function getServerSideProps({ params }) {
   try {
     await dbConnect()
-    const res = await axios.get(`https://auto.keta.mk/api/cars/${params.id}`)
+    const res = await axios.get(`https://auto.keta.mk0/api/cars/${params.id}`)
     return {
       props: {
         car: res.data,
