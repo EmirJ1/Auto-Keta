@@ -69,10 +69,10 @@ export default function Car({ car }) {
               </div>
               <div className="col-6 space-y-2 font-bold capitalize">
                 <p>{car.mark}</p>
-                <p>{car.model} VII</p>
+                <p>{car.model}</p>
                 <p>{car.year}</p>
                 <p>{car.fueltype}</p>
-                <p>1.6TDI</p>
+                <p>{car.motori}</p>
                 <p>{car.transmission}</p>
                 <p>5</p>
                 <p>{car.km}</p>
