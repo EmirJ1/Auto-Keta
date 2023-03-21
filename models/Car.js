@@ -33,7 +33,16 @@ const CarSchema = new mongoose.Schema(
       required: true,
     },
     images: {
-      type: [String],
+      type: Array,
+    },
+    chair: {
+      type: String,
+    },
+    color: {
+      type: String,
+    },
+    motor: {
+      type: String,
     },
   },
   { timestamps: true }
