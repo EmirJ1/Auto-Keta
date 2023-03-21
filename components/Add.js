@@ -44,7 +44,7 @@ export default function Add({ setAdd }) {
         color,
         motor,
       }
-      await axios.post('https://auto.keta.mk0/api/cars', newProduct)
+      await axios.post('https://auto.keta.mk/api/cars', newProduct)
       //   setAdd(true)
       Router.reload()
       //   setAdd(true)
