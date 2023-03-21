@@ -113,8 +113,8 @@ export default function ProductEdit({ product }) {
             <EditInput name="year" label="Year" value={year} onChange={setYear} />
             <EditInput name="km" label="KM" value={km} onChange={setKm} />
             <EditInput name="price" label="Price" value={price} onChange={setPrice} />
-            <EditInput name="chair" label="Price" value={chair} onChange={setChair} />
-            <EditInput name="motor" label="Price" value={motor} onChange={setMotor} />
+            <EditInput name="chair" label="Chair" value={chair} onChange={setChair} />
+            <EditInput name="motor" label="Motor" value={motor} onChange={setMotor} />
           </div>
           <button
             className="mt-2 bg-blue-500 text-white rounded-md px-5 py-2"
