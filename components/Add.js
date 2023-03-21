@@ -19,6 +19,7 @@ export default function Add({ setAdd }) {
   const [transmission, setTransmission] = useState(null)
   const [chair, setChair] = useState(null)
   const [color, setColor] = useState(null)
+  const [motor, setMotor] = useState(null)
   async function handleCreate() {
     const data = new FormData()
     data.append('file', files)
@@ -41,6 +42,7 @@ export default function Add({ setAdd }) {
         images: arr,
         chair,
         color,
+        motor,
       }
       await axios.post('https://auto.keta.mk/api/cars', newProduct)
       Router.reload()
@@ -74,6 +76,7 @@ export default function Add({ setAdd }) {
           <AdminInput name="km" label="Km" onChange={setKm} />
           <AdminInput name="chair" label="Chair" onChange={setChair} />
           <AdminInput name="color" label="Color" onChange={setColor} />
+          <AdminInput name="motor" label="Motor" onChange={setMotor} />
           <label htmlFor="fuelType">Fuel Type</label>
           <select
             name="fuelType"

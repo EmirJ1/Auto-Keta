@@ -6,44 +6,7 @@ import dbConnect from 'utils/mongo'
 
 import Layout from '@/components/layout/Layout'
 
-const images = [
-  // {
-  //   original: '/images/golf7.jpg',
-  //   thumbnail: '/images/golf7.jpg',
-  // },
-  // {
-  //   original: 'https://picsum.photos/id/1015/1000/600/',
-  //   thumbnail: 'https://picsum.photos/id/1015/250/150/',
-  // },
-  // {
-  //   original: 'https://picsum.photos/id/1019/1000/600/',
-  //   thumbnail: 'https://picsum.photos/id/1019/250/150/',
-  // },
-  // {
-  //   original: 'https://picsum.photos/id/1018/1000/600/',
-  //   thumbnail: 'https://picsum.photos/id/1018/250/150/',
-  // },
-  // {
-  //   original: 'https://picsum.photos/id/1015/1000/600/',
-  //   thumbnail: 'https://picsum.photos/id/1015/250/150/',
-  // },
-  // {
-  //   original: 'https://picsum.photos/id/1019/1000/600/',
-  //   thumbnail: 'https://picsum.photos/id/1019/250/150/',
-  // },
-  // {
-  //   original: 'https://picsum.photos/id/1018/1000/600/',
-  //   thumbnail: 'https://picsum.photos/id/1018/250/150/',
-  // },
-  // {
-  //   original: 'https://picsum.photos/id/1015/1000/600/',
-  //   thumbnail: 'https://picsum.photos/id/1015/250/150/',
-  // },
-  // {
-  //   original: 'https://picsum.photos/id/1019/1000/600/',
-  //   thumbnail: 'https://picsum.photos/id/1019/250/150/',
-  // },
-]
+const images = []
 
 export default function Car({ car }) {
   for (let i = 0; i < car.images.length; i++) {
@@ -73,17 +36,19 @@ export default function Car({ car }) {
               </div>
               <div className="col-6 space-y-2 font-bold capitalize">
                 <p>{car.mark}</p>
-                <p>{car.model} VII</p>
+                <p>{car.model}</p>
                 <p>{car.year}</p>
                 <p>{car.fueltype}</p>
                 <p>1.6TDI</p>
                 <p>{car.transmission}</p>
-                <p>5</p>
+                <p>{car.chair}</p>
                 <p>{car.km}</p>
-                <p>E Zezë</p>
+                <p>{car.color}</p>
               </div>
               <div className="col-10 border-t-2 border-gray-900 mt-5">
-                <p className="font-bold text-xl text-center mt-5">14,000 €</p>
+                <p className="font-bold text-xl text-center mt-5">
+                  {car.price.toLocaleString('en-US')} €
+                </p>
               </div>
             </div>
             {/* Година: 2015 Марка: RENAULT Модел: CLIO Гориво: ДИЗЕЛ Мотор: 1.5dCi 90HP Кубикажа: 1461

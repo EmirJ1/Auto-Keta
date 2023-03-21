@@ -42,7 +42,7 @@ export default function CarsItem({ cars }) {
                 </div>
               </div>
               <div className="col-6 mt-5 text-center">
-                <p className="font-bold text-xl">{cars.price} €</p>
+                <p className="font-bold text-xl">{cars.price.toLocaleString('en-US')} €</p>
               </div>
             </div>
           </div>
