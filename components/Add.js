@@ -45,7 +45,7 @@ export default function Add({ setAdd }) {
         motor,
       }
 <<<<<<< HEAD
-      await axios.post('http://localhost:3000/api/cars', newProduct)
+      await axios.post('https://auto.keta.mk/api/cars', newProduct)
       //   setAdd(true)
 =======
       await axios.post('https://auto.keta.mk/api/cars', newProduct)
