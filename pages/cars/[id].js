@@ -7,44 +7,13 @@ import dbConnect from 'utils/mongo'
 import Layout from '@/components/layout/Layout'
 
 const images = [
-  {
-    original: '/images/golf7.jpg',
-    thumbnail: '/images/golf7.jpg',
-  },
-  {
-    original: 'https://picsum.photos/id/1015/1000/600/',
-    thumbnail: 'https://picsum.photos/id/1015/250/150/',
-  },
-  {
-    original: 'https://picsum.photos/id/1019/1000/600/',
-    thumbnail: 'https://picsum.photos/id/1019/250/150/',
-  },
-  {
-    original: 'https://picsum.photos/id/1018/1000/600/',
-    thumbnail: 'https://picsum.photos/id/1018/250/150/',
-  },
-  {
-    original: 'https://picsum.photos/id/1015/1000/600/',
-    thumbnail: 'https://picsum.photos/id/1015/250/150/',
-  },
-  {
-    original: 'https://picsum.photos/id/1019/1000/600/',
-    thumbnail: 'https://picsum.photos/id/1019/250/150/',
-  },
-  {
-    original: 'https://picsum.photos/id/1018/1000/600/',
-    thumbnail: 'https://picsum.photos/id/1018/250/150/',
-  },
-  {
-    original: 'https://picsum.photos/id/1015/1000/600/',
-    thumbnail: 'https://picsum.photos/id/1015/250/150/',
-  },
-  {
-    original: 'https://picsum.photos/id/1019/1000/600/',
-    thumbnail: 'https://picsum.photos/id/1019/250/150/',
-  },
+  
 ]
+
 export default function Car({ car }) {
+  for(let i = 0; i < car.images.length; i++) {
+    images.push({ original: car.images[i].url, thumbnail: car.images[i].url })
+  }
   return (
     <Layout>
       <div className="container">
