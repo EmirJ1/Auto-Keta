@@ -12,8 +12,8 @@ export default function ProductEdit({ product }) {
   const [price, setPrice] = useState(product.price)
   const [year, setYear] = useState(product.year)
   const [km, setKm] = useState(product.km)
-  const [chair, setChair] = useState(product.chair)
   const [motor, setMotor] = useState(product.motor)
+  const [chair, setChair] = useState(product.chair)
   const [fueltype, setFuelType] = useState(product.fueltype)
   const [transmission, setTransmission] = useState(product.transmission)
 
@@ -25,10 +25,10 @@ export default function ProductEdit({ product }) {
         price,
         year,
         km,
+        motor,
         fueltype,
         transmission,
         chair,
-        motor,
       }
 
       await axios.put('https://auto.keta.mk/api/cars/' + id, Product)
@@ -76,6 +76,8 @@ export default function ProductEdit({ product }) {
                 <option value="vw">VW</option>
                 <option value="hyundai">Hyundai</option>
                 <option value="toyota">Toyota</option>
+
+
               </select>
             </div>
             <EditInput name="model" label="Model" value={model} onChange={setModel} />
@@ -112,9 +114,9 @@ export default function ProductEdit({ product }) {
             </div>
             <EditInput name="year" label="Year" value={year} onChange={setYear} />
             <EditInput name="km" label="KM" value={km} onChange={setKm} />
+            <EditInput name="motor" label="Motor" value={motor} onChange={setMotor} />
             <EditInput name="price" label="Price" value={price} onChange={setPrice} />
             <EditInput name="chair" label="Chair" value={chair} onChange={setChair} />
-            <EditInput name="motor" label="Motor" value={motor} onChange={setMotor} />
           </div>
           <button
             className="mt-2 bg-blue-500 text-white rounded-md px-5 py-2"

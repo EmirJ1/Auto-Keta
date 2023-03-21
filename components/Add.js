@@ -44,12 +44,8 @@ export default function Add({ setAdd }) {
         color,
         motor,
       }
-<<<<<<< HEAD
       await axios.post('https://auto.keta.mk/api/cars', newProduct)
       //   setAdd(true)
-=======
-      await axios.post('https://auto.keta.mk/api/cars', newProduct)
->>>>>>> 987342956e85b935e53c3686cbd524a9c2b199bf
       Router.reload()
       //   setAdd(true)
     } catch (err) {
@@ -79,9 +75,9 @@ export default function Add({ setAdd }) {
           <AdminInput name="price" label="Price" onChange={setPrice} />
           <YearOption setYear={setYear} />
           <AdminInput name="km" label="Km" onChange={setKm} />
+          <AdminInput name="motor" label="Motor" onChange={setMotor} />
           <AdminInput name="chair" label="Chair" onChange={setChair} />
           <AdminInput name="color" label="Color" onChange={setColor} />
-          <AdminInput name="motor" label="Motor" onChange={setMotor} />
           <label htmlFor="fuelType">Fuel Type</label>
           <select
             name="fuelType"
