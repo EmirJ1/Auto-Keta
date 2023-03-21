@@ -6,12 +6,10 @@ import dbConnect from 'utils/mongo'
 
 import Layout from '@/components/layout/Layout'
 
-const images = [
-  
-]
+const images = []
 
 export default function Car({ car }) {
-  for(let i = 0; i < car.images.length; i++) {
+  for (let i = 0; i < car.images.length; i++) {
     images.push({ original: car.images[i].url, thumbnail: car.images[i].url })
   }
   return (
@@ -48,7 +46,9 @@ export default function Car({ car }) {
                 <p>{car.color}</p>
               </div>
               <div className="col-10 border-t-2 border-gray-900 mt-5">
-                <p className="font-bold text-xl text-center mt-5">{car.price.toLocaleString('en-US')} €</p>
+                <p className="font-bold text-xl text-center mt-5">
+                  {car.price.toLocaleString('en-US')} €
+                </p>
               </div>
             </div>
             {/* Година: 2015 Марка: RENAULT Модел: CLIO Гориво: ДИЗЕЛ Мотор: 1.5dCi 90HP Кубикажа: 1461

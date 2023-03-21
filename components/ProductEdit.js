@@ -78,10 +78,6 @@ export default function ProductEdit({ product }) {
                 <option value="toyota">Toyota</option>
                 <option value="toyota">Suzuki</option>
                 <option value="toyota">Mazda</option>
-
-
-
-
               </select>
             </div>
             <EditInput name="model" label="Model" value={model} onChange={setModel} />
