@@ -33,7 +33,7 @@ export default function Add({ setAdd }) {
         fueltype,
         transmission,
       }
-      await axios.post('https://auto.keta.mk/api/cars', newProduct)
+      await axios.post('http://localhost:3000/api/cars', newProduct)
       //   setAdd(true)
       Router.reload()
     } catch (err) {

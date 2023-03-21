@@ -16,7 +16,7 @@ export default function Home({ cars }) {
 }
 
 export async function getServerSideProps() {
-  const carsProd = await axios.get('https://auto.keta.mk/api/cars')
+  const carsProd = await axios.get('http://localhost:3000/api/cars')
   return {
     props: {
       cars: carsProd.data,

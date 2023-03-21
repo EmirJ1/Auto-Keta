@@ -27,7 +27,7 @@ export default function ProductEdit({ product }) {
         transmission,
       }
 
-      await axios.put('https://auto.keta.mk/api/cars/' + id, Product)
+      await axios.put('http://localhost:3000/api/cars/' + id, Product)
       Router.reload()
     } catch (err) {
       // eslint-disable-next-line no-console
