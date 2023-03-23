@@ -1,7 +1,7 @@
 import axios from 'axios'
 import Router from 'next/router'
 import { useState } from 'react'
-
+import CarsItem from './CarsItem'
 import EditInput from './EditInput'
 
 export default function ProductEdit({ product }) {
@@ -30,7 +30,7 @@ export default function ProductEdit({ product }) {
         fueltype,
         transmission,
         chair,
-        color,
+        color, 
       }
 
       await axios.put('https://auto.keta.mk/api/cars/' + id, Product)
@@ -120,6 +120,7 @@ export default function ProductEdit({ product }) {
             <EditInput name="price" label="Price" value={price} onChange={setPrice} />
             <EditInput name="chair" label="Chair" value={chair} onChange={setChair} />
             <EditInput name="color" label="Color" value={color} onChange={setColor} />
+
           </div>
           <button
             className="mt-2 bg-blue-500 text-white rounded-md px-5 py-2"
