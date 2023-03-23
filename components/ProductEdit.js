@@ -16,6 +16,7 @@ export default function ProductEdit({ product }) {
   const [chair, setChair] = useState(product.chair)
   const [fueltype, setFuelType] = useState(product.fueltype)
   const [transmission, setTransmission] = useState(product.transmission)
+  const [color, setColor] = useState(product.color) 
 
   async function handleUpdate(id) {
     try {
@@ -29,6 +30,7 @@ export default function ProductEdit({ product }) {
         fueltype,
         transmission,
         chair,
+        color,
       }
 
       await axios.put('https://auto.keta.mk/api/cars/' + id, Product)
@@ -43,7 +45,7 @@ export default function ProductEdit({ product }) {
       <button onClick={() => setEdit(!edit)}>Edit</button>
       <div
         style={{ zIndex: 9999 }}
-        className={`bg-gray-500 w-full h-screen absolute top-0 left-0 items-center justify-center ${
+        className={`bg-gray-400 w-full h-screen absolute top-0 left-0 items-center justify-center ${
           edit ? ' flex' : ' hidden'
         }`}
       >
@@ -76,8 +78,8 @@ export default function ProductEdit({ product }) {
                 <option value="vw">VW</option>
                 <option value="hyundai">Hyundai</option>
                 <option value="toyota">Toyota</option>
-                <option value="toyota">Suzuki</option>
-                <option value="toyota">Mazda</option>
+                <option value="suzuki">Suzuki</option>
+                <option value="mazda">Mazda</option>
               </select>
             </div>
             <EditInput name="model" label="Model" value={model} onChange={setModel} />
@@ -117,6 +119,7 @@ export default function ProductEdit({ product }) {
             <EditInput name="motor" label="Motor" value={motor} onChange={setMotor} />
             <EditInput name="price" label="Price" value={price} onChange={setPrice} />
             <EditInput name="chair" label="Chair" value={chair} onChange={setChair} />
+            <EditInput name="color" label="Color" value={color} onChange={setColor} />
           </div>
           <button
             className="mt-2 bg-blue-500 text-white rounded-md px-5 py-2"
