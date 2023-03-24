@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function FooterSection() {
   return (
-    <div className="bg-gray-500">
+    <div className="bg-gray-300">
       <div className="container">
         <div className="row">
           <div className="col-12 py-4">

@@ -10,18 +10,18 @@ export default function CarOptionInput({ setMark }) {
         className="w-full border rounded-md p-1 border-black"
       >
         <option value={null}>Select Model</option>
+        <option value="mercedes">Mercedes</option>
         <option value="audi">Audi</option>
         <option value="bmw">BMW</option>
+        <option value="vw">VW</option>
         <option value="citroen">Citroen</option>
         <option value="ford">Ford</option>
-        <option value="mercedes">Mercedes</option>
         <option value="opel">Opel</option>
         <option value="peugeot">Peugeot</option>
-        <option value="vw">VW</option>
         <option value="hyundai">Hyundai</option>
         <option value="toyota">Toyota</option>
-        <option value="toyota">Suzuki</option>
-        <option value="toyota">Mazda</option>
+        <option value="suzuki">Suzuki</option>
+        <option value="mazda">Mazda</option>
 
 
 

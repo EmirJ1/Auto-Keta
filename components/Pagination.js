@@ -52,7 +52,7 @@ export default function Pagination({ cars }) {
                 <td>{car.price.toLocaleString()}.00 € </td>
                 <td>
                   <ProductEdit product={car} />
-                  <button className="ml-2" onClick={() => handleDelete(car._id)}>
+                  <button className="ml-2 bg-red-300" onClick={() => handleDelete(car._id)}>
                     Delete
                   </button>
                 </td>
