@@ -1,3 +1,4 @@
+//Per ti regullu navbar
 import Link from 'next/link'
 import { useState } from 'react'
 import SVG from 'react-inlinesvg'

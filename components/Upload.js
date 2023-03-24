@@ -1,3 +1,4 @@
+//Pjeesa per ti vendu fotot MOOOOOOOS E PREEEEK
 import axios from 'axios'
 
 export default async function uploadCloudinary(file) {

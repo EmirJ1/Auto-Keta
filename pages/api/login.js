@@ -1,3 +1,4 @@
+//Konektimi ne database 
 import cookie from 'cookie'
 
 function handler(req, res) {
