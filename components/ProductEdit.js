@@ -36,7 +36,7 @@ export default function ProductEdit({ product }) {
         color,
       }
 
-      await axios.put('http://localhost:3000/api/cars/' + id, Product)
+      await axios.put('https://auto.keta.mk/api/cars/' + id, Product)
       Router.reload()
     } catch (err) {
       // eslint-disable-next-line no-console
@@ -45,7 +45,9 @@ export default function ProductEdit({ product }) {
   }
   return (
     <>
-      <button className="px-4 text-white bg-blue-400 rounded-xl" onClick={() => setEdit(!edit)}>Edit</button>
+      <button className="px-4 text-white bg-blue-400 rounded-xl" onClick={() => setEdit(!edit)}>
+        Edit
+      </button>
       <div
         style={{ zIndex: 9999 }}
         className={`bg-gray-400 w-full h-screen absolute top-0 left-0 items-center justify-center ${
