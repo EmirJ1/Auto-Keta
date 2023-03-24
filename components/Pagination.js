@@ -26,29 +26,32 @@ export default function Pagination({ cars }) {
 
   return (
     <>
-      {_DATA.currentData(cars).map((car) => (
-        <div className="flex flex-row my-10 border-b border-black pb-8" key={car._id}>
-          <div className="flex flex-col">
-            <Image src={car.images[0].url} width={300} height={250} alt="foto" />
-          </div>
-          <div className="flex flex-col ml-10 ">
-            <h3 className="">
-              {car.mark} {car.model} {car.year} {car.motor}
-            </h3>
-            <p>Created at: {car.createdAt}</p>
-            <p>Updated at: {car.updatedAt}</p>
-            <div className="flex flex-inline">
-              <ProductEdit product={car} />
-              <button
-                className="ml-4 bg-red-500 text-white px-3 rounded-xl"
-                onClick={() => handleDelete(car._id)}
-              >
-                Delete
-              </button>
+      {_DATA
+        .currentData(cars)
+        .sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt))
+        .map((car) => (
+          <div className="flex flex-row my-10 border-b border-black pb-8" key={car._id}>
+            <div className="flex flex-col">
+              <Image src={car.images[0].url} width={300} height={250} alt="foto" />
+            </div>
+            <div className="flex flex-col ml-10 ">
+              <h3 className="">
+                {car.mark} {car.model} {car.year} {car.motor}
+              </h3>
+              <p>Created at: {car.createdAt}</p>
+              <p>Updated at: {car.updatedAt}</p>
+              <div className="flex flex-inline">
+                <ProductEdit product={car} />
+                <button
+                  className="ml-4 bg-red-500 text-white px-3 rounded-xl"
+                  onClick={() => handleDelete(car._id)}
+                >
+                  Delete
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-      ))}
+        ))}
       <div className="flex md:flex-row flex-wrap items-center mt-5">
         <Button disabled={_DATA.currentPage == 1} className="mr-4" onClick={() => _DATA.prev()}>
           Previous
