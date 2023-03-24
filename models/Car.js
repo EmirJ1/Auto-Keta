@@ -44,6 +44,9 @@ const CarSchema = new mongoose.Schema(
     motor: {
       type: String,
     },
+    extras: {
+      type: Array,
+    },
   },
   { timestamps: true }
 )

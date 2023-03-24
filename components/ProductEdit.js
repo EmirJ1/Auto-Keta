@@ -16,6 +16,7 @@ export default function ProductEdit({ product }) {
   const [chair, setChair] = useState(product.chair)
   const [fueltype, setFuelType] = useState(product.fueltype)
   const [transmission, setTransmission] = useState(product.transmission)
+  const [extras, setExtras] = useState()
 
   async function handleUpdate(id) {
     try {
@@ -29,9 +30,10 @@ export default function ProductEdit({ product }) {
         fueltype,
         transmission,
         chair,
+        extras,
       }
 
-      await axios.put('https://auto.keta.mk/api/cars/' + id, Product)
+      await axios.put('http://localhost:3000/api/cars/' + id, Product)
       Router.reload()
     } catch (err) {
       // eslint-disable-next-line no-console
@@ -117,6 +119,7 @@ export default function ProductEdit({ product }) {
             <EditInput name="motor" label="Motor" value={motor} onChange={setMotor} />
             <EditInput name="price" label="Price" value={price} onChange={setPrice} />
             <EditInput name="chair" label="Chair" value={chair} onChange={setChair} />
+            <EditInput name="extras" label="Extras" value={extras} onChange={setExtras} />
           </div>
           <button
             className="mt-2 bg-blue-500 text-white rounded-md px-5 py-2"

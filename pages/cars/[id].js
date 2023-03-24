@@ -6,9 +6,8 @@ import dbConnect from 'utils/mongo'
 
 import Layout from '@/components/layout/Layout'
 
-const images = []
-
 export default function Car({ car }) {
+  const images = []
   for (let i = 0; i < car.images.length; i++) {
     images.push({ original: car.images[i].url, thumbnail: car.images[i].url })
   }
@@ -30,7 +29,7 @@ export default function Car({ car }) {
                 <p>Karburanti:</p>
                 <p>Motori:</p>
                 <p>Transmetuesi:</p>
-                <p>Numri i karikeve:</p>
+                <p>Karike:</p>
                 <p>KM:</p>
                 <p>Ngjyra:</p>
               </div>
@@ -60,29 +59,22 @@ export default function Car({ car }) {
           <div className="col-12">
             <h2 className="text-2xl">Pajisjet extra</h2>
           </div>
+          {car.extras.length < 10 ? (
+            <div className="col-4">
+              {car.extras.map((extra) => (
+                <div key={extra} className="w-full inline-flex items-center">
+                  <SVG src="/svg/tick.svg" className="w-5 h-5" />
+                  <p className="ml-2">{extra}</p>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <>
+              <p>{car.extras[0]}</p>
+            </>
+          )}
+          {console.log(car)}
           <div className="col-4">
-            <div className="w-full inline-flex items-center">
-              <SVG src="/svg/tick.svg" className="w-5 h-5" />
-              <p className="ml-2">Manual</p>
-            </div>
-            <div className="w-full inline-flex items-center">
-              <SVG src="/svg/tick.svg" className="w-5 h-5" />
-              <p className="ml-2">Manual</p>
-            </div>
-            <div className="w-full inline-flex items-center">
-              <SVG src="/svg/tick.svg" className="w-5 h-5" />
-              <p className="ml-2">Manual</p>
-            </div>
-          </div>
-          <div className="col-4">
-            <div className="w-full inline-flex items-center">
-              <SVG src="/svg/tick.svg" className="w-5 h-5" />
-              <p className="ml-2">Manual</p>
-            </div>
-            <div className="w-full inline-flex items-center">
-              <SVG src="/svg/tick.svg" className="w-5 h-5" />
-              <p className="ml-2">Manual</p>
-            </div>
             <div className="w-full inline-flex items-center">
               <SVG src="/svg/tick.svg" className="w-5 h-5" />
               <p className="ml-2">Manual</p>
