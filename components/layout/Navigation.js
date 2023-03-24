@@ -25,7 +25,6 @@ export default function Navigation() {
         <div className="flex flex-row py-6 justify-between">
           <div className="md:w-1/2">
             <p className="font-bold text-black-800 text-5xl"></p>
-              
           </div>
           <div className="w-1/4 md:hidden block">
             <label htmlFor="menu-toggle" className="cursor-pointer">

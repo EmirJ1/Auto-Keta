@@ -1,4 +1,4 @@
-//Konektimi ne database 
+//Konektimi ne database
 import Car from 'models/Car'
 import dbConnect from 'utils/mongo'
 

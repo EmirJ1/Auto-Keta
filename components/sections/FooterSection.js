@@ -12,7 +12,7 @@ export default function FooterSection() {
             </p>
           </div>
         </div>
-              </div>
+      </div>
     </div>
   )
 }

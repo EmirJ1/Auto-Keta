@@ -21,7 +21,7 @@ export default function Layout({ children, title = null }) {
         <link rel="icon" href="/favicons/keta.ico" sizes="96x96" />
         <link rel="icon" href="/favicons/keta.ico" sizes="128x128" />
         <link rel="icon" href="/favicons/keta.ico" sizes="192x192" />
-        
+
         <link rel="icon" href="/favicons/keta.ico" sizes="228x228" />
       </Head>
       <div className={`font-sans antialiased flex flex-col ${dev ? 'debug-screens' : ''}`}>

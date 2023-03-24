@@ -74,7 +74,6 @@ export default function Car({ car }) {
               <p>{car.extras[0]}</p>
             </>
           )}
-          {console.log(car)}
           <div className="col-4">
             <div className="w-full inline-flex items-center">
               <SVG src="/svg/tick.svg" className="w-5 h-5" />

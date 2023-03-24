@@ -23,9 +23,6 @@ export default function CarOptionInput({ setMark }) {
         <option value="Toyota">Toyota</option>
         <option value="Suzuki">Suzuki</option>
         <option value="Mazda">Mazda</option>
-
-
-
       </select>
     </div>
   )
