@@ -1,3 +1,4 @@
+//Deklarimi i pjese ne data base
 import mongoose from 'mongoose'
 
 const CarSchema = new mongoose.Schema(

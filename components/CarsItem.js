@@ -1,3 +1,4 @@
+//Shfaqja e 1 produkti ke indexi/home
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -15,7 +16,7 @@ export default function CarsItem({ cars }) {
               alt="car"
               width={300}
               height={450}
-              className="w-full h-auto rounded-xl"
+              className="w-full h-auto rounded-xl cars-img"
             />
             <div className="row justify-center p-4">
               <h3 className="text-xl border-b-2 pb-3 border-red-500 text-black hover:text-red-500 my-5 text-center capitalize">

@@ -1,3 +1,4 @@
+//elementi ku hejn ti bojsh add te dhenat e vetures
 import React from 'react'
 
 export default function AdminInput({ name, label, value, onChange }) {

@@ -1,3 +1,4 @@
+//Elementi per ndrimin e produktit
 import React from 'react'
 
 export default function EditInput({ name, label, onChange }) {

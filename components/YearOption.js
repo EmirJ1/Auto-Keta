@@ -1,3 +1,4 @@
+//Pjesa ku i deklaron vitet
 export default function YearOption({ setYear }) {
   const years = []
   for (let i = 2004; i < 2023; i++) {

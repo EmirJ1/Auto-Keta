@@ -1,3 +1,4 @@
+//Inputi per ti zgjedh apo ti shtojsh veturat
 import React from 'react'
 
 export default function CarOptionInput({ setMark }) {
@@ -10,18 +11,18 @@ export default function CarOptionInput({ setMark }) {
         className="w-full border rounded-md p-1 border-black"
       >
         <option value={null}>Select Model</option>
-        <option value="mercedes">Mercedes</option>
-        <option value="audi">Audi</option>
-        <option value="bmw">BMW</option>
-        <option value="vw">VW</option>
-        <option value="citroen">Citroen</option>
-        <option value="ford">Ford</option>
-        <option value="opel">Opel</option>
-        <option value="peugeot">Peugeot</option>
-        <option value="hyundai">Hyundai</option>
-        <option value="toyota">Toyota</option>
-        <option value="suzuki">Suzuki</option>
-        <option value="mazda">Mazda</option>
+        <option value="Mercedes">Mercedes</option>
+        <option value="Audi">Audi</option>
+        <option value="BMW">BMW</option>
+        <option value="VW">VW</option>
+        <option value="Citroen">Citroen</option>
+        <option value="Ford">Ford</option>
+        <option value="Opel">Opel</option>
+        <option value="Peugeot">Peugeot</option>
+        <option value="Hyundai">Hyundai</option>
+        <option value="Toyota">Toyota</option>
+        <option value="Suzuki">Suzuki</option>
+        <option value="Mazda">Mazda</option>
 
 
 

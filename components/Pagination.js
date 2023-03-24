@@ -1,7 +1,9 @@
+//Pjesa ku i ndron facet next/previous
 import axios from 'axios'
 import Router from 'next/router'
 import React, { useState } from 'react'
 import usePagination from 'utils/usePagination'
+import Image from 'next/image'
 
 import Button from './Button'
 import ProductEdit from './ProductEdit'
@@ -24,54 +26,35 @@ export default function Pagination({ cars }) {
 
   return (
     <>
-      <div>
-        <table className="mt-5 w-full bg-white rounded-lg">
-          <thead className="px-4 py-2">
-            <tr>
-              <td className="px-3">Product Id</td>
-              <td className="px-3">Mark</td>
-              <td className="text-center">Model</td>
-              <td>Year</td>
-              <td>KM</td>
-              <td>Fuel Type</td>
-              <td>Transmission</td>
-              <td>Price</td>
-              <td>Action</td>
-            </tr>
-          </thead>
-          <tbody>
-            {_DATA.currentData(cars).map((car) => (
-              <tr className="border-b border-black" key={car._id}>
-                <td>{car._id}</td>
-                <td>{car.mark}</td>
-                <td className="text-center">{car.model}</td>
-                <td>{car.year}</td>
-                <td>{car.km}</td>
-                <td>{car.fueltype}</td>
-                <td>{car.transmission}</td>
-                <td>{car.price.toLocaleString()}.00 € </td>
-                <td>
-                  <ProductEdit product={car} />
-                  <button className="ml-2 bg-red-300" onClick={() => handleDelete(car._id)}>
-                    Delete
-                  </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+      {_DATA.currentData(cars).map((car) => (
+        <div className="flex flex-row my-10 border-b border-black pb-8">
+          <div className="flex flex-col">
+            <Image src={car.images[0].url} width={300} height={250} alt="foto"/>
+          </div>
+          <div className="flex flex-col ml-10 ">
+            <h3 className=''>{car.mark}  {car.model}  {car.year}  {car.motor}</h3>
+                <p>Created at: {car.createdAt}</p>
+                <p>Updated at: {car.updatedAt}</p>
+              <div className='flex flex-inline'>
+              <ProductEdit product={car} />
+              <button className="ml-4 bg-red-500 text-white px-3 rounded-xl" onClick={() => handleDelete(car._id)}>
+                Delete
+              </button>
+              </div>
+          </div>
+        </div>
+           ))}
       <div className="flex md:flex-row flex-wrap items-center mt-5">
         <Button disabled={_DATA.currentPage == 1} className="mr-4" onClick={() => _DATA.prev()}>
           Previous
         </Button>
         {arr.map((e) => (
           <Button
-            key={e}
-            className={`mr-4 ${
-              _DATA.currentPage === e ? 'bg-pink-500 text-black' : 'bg-white text-black'
-            }`}
-            onClick={() => _DATA.jump(e)}
+          key={e}
+          className={`mr-4 ${
+            _DATA.currentPage === e ? 'bg-pink-500 text-black' : 'bg-white text-black'
+          }`}
+          onClick={() => _DATA.jump(e)}
           >
             {e}
           </Button>
@@ -81,5 +64,7 @@ export default function Pagination({ cars }) {
         </Button>
       </div>
     </>
-  )
-}
+    
+    )
+  }
+  

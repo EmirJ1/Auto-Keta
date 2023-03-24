@@ -1,3 +1,4 @@
+//Facja e ni produkti si duket mrenda kur klikon te ni veture
 import axios from 'axios'
 import React from 'react'
 import ReactImageGallery from 'react-image-gallery'

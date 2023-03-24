@@ -1,3 +1,4 @@
+//Home i adminitt 
 /* eslint-disable react-hooks/rules-of-hooks */
 import axios from 'axios'
 import { useState } from 'react'
@@ -5,6 +6,7 @@ import { useState } from 'react'
 import Add from '@/components/Add'
 import Layout from '@/components/layout/Layout'
 import Pagination from '@/components/Pagination'
+import AdminCarItem from '@/components/AdminCarItem'
 export default function index({ cars }) {
   const [add, setAdd] = useState(true)
   return (

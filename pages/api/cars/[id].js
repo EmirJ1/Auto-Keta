@@ -1,3 +1,4 @@
+//Konektimi ne database per ni produkt 
 import dbConnect from 'utils/mongo'
 
 import Car from '../../../models/Car'
