@@ -48,6 +48,9 @@ const CarSchema = new mongoose.Schema(
     extras: {
       type: Array,
     },
+    sale: {
+      type: String,
+    },
   },
   { timestamps: true }
 )

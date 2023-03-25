@@ -21,6 +21,7 @@ export default function Add({ setAdd }) {
   const [chair, setChair] = useState(null)
   const [color, setColor] = useState(null)
   const [motor, setMotor] = useState(null)
+  const [sale, setSale] = useState(null)
   async function handleCreate() {
     const data = new FormData()
     data.append('file', files)
@@ -44,8 +45,9 @@ export default function Add({ setAdd }) {
         chair,
         color,
         motor,
+        sale,
       }
-      await axios.post('https://auto.keta.mk/api/cars', newProduct)
+      await axios.post('http://localhost:3000/api/cars', newProduct)
       //   setAdd(true)
       Router.reload()
       //   setAdd(true)
@@ -100,7 +102,14 @@ export default function Add({ setAdd }) {
             <option value="automatic">Automatic</option>
             <option value="step-tronic">Step-Tronic</option>
           </select>
-
+          <p className="my-5">NEW/OLD/SOLD</p>
+          <input type="radio" name="sale" value="0" onChange={(e)=>setSale(e.target.value)}/>
+          <label for="sale">NEW</label>
+          <input type="radio" name="sale" value="1" onChange={(e)=>setSale(e.target.value)}/>
+          <label for="sale">OLD</label>
+          <input type="radio" name="sale" value="2" onChange={(e)=>setSale(e.target.value)}/>
+          <label for="sale">SOLD</label>
+          {console.log(sale)}
           <button onClick={() => handleCreate()}>Add</button>
         </div>
       </div>

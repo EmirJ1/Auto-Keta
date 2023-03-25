@@ -13,6 +13,7 @@ export default function CarsSection({ cars }) {
             .map((car) => (
               <CarsItem key={car._id} cars={car} />
             ))}
+            {console.log(cars)}
         </div>
       </div>
     </div>

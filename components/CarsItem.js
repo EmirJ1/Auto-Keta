@@ -9,8 +9,18 @@ export default function CarsItem({ cars }) {
     <div className="lg:col-4 md:col-6 mb-8 ">
       <Link href={`/cars/${cars._id}`} legacyBehavior>
         <a>
-          {/* {console.log(cars[3].images.reduce((a, v) => ({ ...a, [v]: v }), {}))} */}
           <div className="bg-white p-1 rounded-xl">
+          {cars.sale == 0 ? (
+            <div className="absolute px-2 mt-5 -ml-3 bg-green-500 text-white">
+              <span>NEW</span >
+            </div>
+          ) : cars.sale == 2 ? (
+            <div className="absolute px-2 mt-5 -ml-3 bg-red-500 text-white">
+        <span>SOLD</span >
+      </div>
+          ): (
+            <></>
+          )}
             <Image
               src={cars.images[0].url}
               alt="car"
@@ -20,7 +30,7 @@ export default function CarsItem({ cars }) {
             />
             <div className="row justify-center p-4">
               <h3 className="text-xl border-b-2 pb-3 border-red-500 text-black hover:text-red-500 my-5 text-center capitalize">
-                {`${cars.mark} ${cars.model}`}
+                {`${cars.mark} ${cars.model} ${cars.motor}`}
               </h3>
               <div className="col-6">
                 <div className="w-full inline-flex items-center">

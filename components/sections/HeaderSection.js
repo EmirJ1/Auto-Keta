@@ -1,33 +1,22 @@
 // import { useState } from 'react'
-
+import ReactImageGallery from "react-image-gallery"
 export default function HeaderSection() {
   // const [mark, setMark] = useState('mark')
 
+  const images = [
+    {
+      original: 'https://res.cloudinary.com/drujet4ue/image/upload/v1679360394/uploads/jjhre8p4r7ut1wn4qam2.jpg'
+    },
+    {
+      original: 'https://res.cloudinary.com/drujet4ue/image/upload/v1679360394/uploads/jjhre8p4r7ut1wn4qam2.jpg'
+    },
+    {
+      original: 'https://res.cloudinary.com/drujet4ue/image/upload/v1679360394/uploads/jjhre8p4r7ut1wn4qam2.jpg'
+    },
+  ]
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col-12 my-5">
-          <div className="flex flex-row">
-            <div className="flex flex-col ">
-              <select name="mark">
-                <option value="audi">Audi</option>
-                <option value="bmw">BMW</option>
-                <option value="vw">VW</option>
-                <option value="opel">Opel</option>
-                <option value="citroen">Citroen</option>
-                <option value="peugeot">Peugeot</option>
-              </select>
-            </div>
-            <div className="flex flex-col">
-              <select name="model">
-                <option value="audi">Audi</option>
-                <option value="bmw">BMW</option>
-                <option value="mercedes">Mercedes</option>
-              </select>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div className="row">
+      <ReactImageGallery items={images} />
     </div>
   )
 }
