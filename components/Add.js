@@ -47,7 +47,7 @@ export default function Add({ setAdd }) {
         motor,
         sale,
       }
-      await axios.post('http://localhost:3000/api/cars', newProduct)
+      await axios.post('https://auto.keta.mk/api/cars', newProduct)
       //   setAdd(true)
       Router.reload()
       //   setAdd(true)
@@ -103,11 +103,11 @@ export default function Add({ setAdd }) {
             <option value="step-tronic">Step-Tronic</option>
           </select>
           <p className="my-5">NEW/OLD/SOLD</p>
-          <input type="radio" name="sale" value="0" onChange={(e)=>setSale(e.target.value)}/>
+          <input type="radio" name="sale" value="0" onChange={(e) => setSale(e.target.value)} />
           <label for="sale">NEW</label>
-          <input type="radio" name="sale" value="1" onChange={(e)=>setSale(e.target.value)}/>
+          <input type="radio" name="sale" value="1" onChange={(e) => setSale(e.target.value)} />
           <label for="sale">OLD</label>
-          <input type="radio" name="sale" value="2" onChange={(e)=>setSale(e.target.value)}/>
+          <input type="radio" name="sale" value="2" onChange={(e) => setSale(e.target.value)} />
           <label for="sale">SOLD</label>
           {console.log(sale)}
           <button onClick={() => handleCreate()}>Add</button>

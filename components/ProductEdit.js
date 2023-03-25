@@ -19,7 +19,7 @@ export default function ProductEdit({ product }) {
   const [transmission, setTransmission] = useState(product.transmission)
   const [extras, setExtras] = useState()
   const [color, setColor] = useState(product.color)
-  const [sale, setSale] =useState(product.sale)
+  const [sale, setSale] = useState(product.sale)
   async function handleUpdate(id) {
     try {
       const Product = {
@@ -37,7 +37,7 @@ export default function ProductEdit({ product }) {
         sale,
       }
 
-      await axios.put('http://localhost:3000/api/cars/' + id, Product)
+      await axios.put('https://auto.keta.mk/api/cars/' + id, Product)
       Router.reload()
     } catch (err) {
       // eslint-disable-next-line no-console
@@ -129,34 +129,52 @@ export default function ProductEdit({ product }) {
             <EditInput name="color" label="Color" value={color} onChange={setColor} />
           </div>
           <p className="my-5">NEW/OLD/SOLD</p>
-          {sale== 0 ?(
+          {sale == 0 ? (
             <>
-            <input type="radio" name="sale" value="0" checked onChange={(e)=>setSale(e.target.value)}/>
-            <label for="sale">NEW</label>
-            <input type="radio" name="sale" value="1"  onChange={(e)=>setSale(e.target.value)}/>
-            <label for="sale">OLD</label>
-            <input type="radio" name="sale" value="2" onChange={(e)=>setSale(e.target.value)}/>
-            <label for="sale">SOLD</label>
+              <input
+                type="radio"
+                name="sale"
+                value="0"
+                checked
+                onChange={(e) => setSale(e.target.value)}
+              />
+              <label for="sale">NEW</label>
+              <input type="radio" name="sale" value="1" onChange={(e) => setSale(e.target.value)} />
+              <label for="sale">OLD</label>
+              <input type="radio" name="sale" value="2" onChange={(e) => setSale(e.target.value)} />
+              <label for="sale">SOLD</label>
             </>
-            ) : sale == 1? (
+          ) : sale == 1 ? (
             <>
-            <input type="radio" name="sale" value="0" onChange={(e)=>setSale(e.target.value)}/>
-            <label for="sale">NEW</label>
-            <input type="radio" name="sale" value="1" checked onChange={(e)=>setSale(e.target.value)}/>
-            <label for="sale">OLD</label>
-            <input type="radio" name="sale" value="2" onChange={(e)=>setSale(e.target.value)}/>
-            <label for="sale">SOLD</label>
+              <input type="radio" name="sale" value="0" onChange={(e) => setSale(e.target.value)} />
+              <label for="sale">NEW</label>
+              <input
+                type="radio"
+                name="sale"
+                value="1"
+                checked
+                onChange={(e) => setSale(e.target.value)}
+              />
+              <label for="sale">OLD</label>
+              <input type="radio" name="sale" value="2" onChange={(e) => setSale(e.target.value)} />
+              <label for="sale">SOLD</label>
             </>
-            ):(
+          ) : (
             <>
-            <input type="radio" name="sale" value="0" onChange={(e)=>setSale(e.target.value)}/>
-            <label for="sale">NEW</label>
-            <input type="radio" name="sale" value="1" onChange={(e)=>setSale(e.target.value)}/>
-            <label for="sale">OLD</label>
-            <input type="radio" name="sale" value="2" checked onChange={(e)=>setSale(e.target.value)}/>
-            <label for="sale">SOLD</label>
+              <input type="radio" name="sale" value="0" onChange={(e) => setSale(e.target.value)} />
+              <label for="sale">NEW</label>
+              <input type="radio" name="sale" value="1" onChange={(e) => setSale(e.target.value)} />
+              <label for="sale">OLD</label>
+              <input
+                type="radio"
+                name="sale"
+                value="2"
+                checked
+                onChange={(e) => setSale(e.target.value)}
+              />
+              <label for="sale">SOLD</label>
             </>
-          )} 
+          )}
           <button
             className="mt-2 bg-blue-500 text-white rounded-md px-5 py-2"
             onClick={() => handleUpdate(product._id)}
