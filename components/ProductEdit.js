@@ -138,16 +138,16 @@ export default function ProductEdit({ product }) {
                 checked
                 onChange={(e) => setSale(e.target.value)}
               />
-              <label for="sale">NEW</label>
+              <label htmlFor="sale">NEW</label>
               <input type="radio" name="sale" value="1" onChange={(e) => setSale(e.target.value)} />
-              <label for="sale">OLD</label>
+              <label htmlFor="sale">OLD</label>
               <input type="radio" name="sale" value="2" onChange={(e) => setSale(e.target.value)} />
-              <label for="sale">SOLD</label>
+              <label htmlFor="sale">SOLD</label>
             </>
           ) : sale == 1 ? (
             <>
               <input type="radio" name="sale" value="0" onChange={(e) => setSale(e.target.value)} />
-              <label for="sale">NEW</label>
+              <label htmlFor="sale">NEW</label>
               <input
                 type="radio"
                 name="sale"
@@ -155,16 +155,16 @@ export default function ProductEdit({ product }) {
                 checked
                 onChange={(e) => setSale(e.target.value)}
               />
-              <label for="sale">OLD</label>
+              <label htmlFor="sale">OLD</label>
               <input type="radio" name="sale" value="2" onChange={(e) => setSale(e.target.value)} />
-              <label for="sale">SOLD</label>
+              <label htmlFor="sale">SOLD</label>
             </>
           ) : (
             <>
               <input type="radio" name="sale" value="0" onChange={(e) => setSale(e.target.value)} />
-              <label for="sale">NEW</label>
+              <label htmlFor="sale">NEW</label>
               <input type="radio" name="sale" value="1" onChange={(e) => setSale(e.target.value)} />
-              <label for="sale">OLD</label>
+              <label htmlFor="sale">OLD</label>
               <input
                 type="radio"
                 name="sale"
@@ -172,7 +172,7 @@ export default function ProductEdit({ product }) {
                 checked
                 onChange={(e) => setSale(e.target.value)}
               />
-              <label for="sale">SOLD</label>
+              <label htmlFor="sale">SOLD</label>
             </>
           )}
           <button

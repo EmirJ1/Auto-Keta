@@ -104,12 +104,11 @@ export default function Add({ setAdd }) {
           </select>
           <p className="my-5">NEW/OLD/SOLD</p>
           <input type="radio" name="sale" value="0" onChange={(e) => setSale(e.target.value)} />
-          <label for="sale">NEW</label>
+          <label htmlFor="sale">NEW</label>
           <input type="radio" name="sale" value="1" onChange={(e) => setSale(e.target.value)} />
-          <label for="sale">OLD</label>
+          <label htmlFor="sale">OLD</label>
           <input type="radio" name="sale" value="2" onChange={(e) => setSale(e.target.value)} />
-          <label for="sale">SOLD</label>
-          {console.log(sale)}
+          <label htmlFor="sale">SOLD</label>
           <button onClick={() => handleCreate()}>Add</button>
         </div>
       </div>

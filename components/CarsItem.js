@@ -10,17 +10,17 @@ export default function CarsItem({ cars }) {
       <Link href={`/cars/${cars._id}`} legacyBehavior>
         <a>
           <div className="bg-white p-1 rounded-xl">
-          {cars.sale == 0 ? (
-            <div className="absolute px-2 mt-5 -ml-3 bg-green-500 text-white">
-              <span>NEW</span >
-            </div>
-          ) : cars.sale == 2 ? (
-            <div className="absolute px-2 mt-5 -ml-3 bg-red-500 text-white">
-        <span>SOLD</span >
-      </div>
-          ): (
-            <></>
-          )}
+            {cars.sale == 0 ? (
+              <div className="absolute px-2 mt-5 -ml-3 bg-green-500 text-white">
+                <span>NEW</span>
+              </div>
+            ) : cars.sale == 2 ? (
+              <div className="absolute px-2 mt-5 -ml-3 bg-red-500 text-white">
+                <span>SOLD</span>
+              </div>
+            ) : (
+              <></>
+            )}
             <Image
               src={cars.images[0].url}
               alt="car"
