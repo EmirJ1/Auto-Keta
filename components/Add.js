@@ -90,6 +90,7 @@ export default function Add({ setAdd }) {
             <option value={null}>Select fuel type</option>
             <option value="diesel">Diesel</option>
             <option value="benzin">Benzin</option>
+            <option value="benzin">Benzin/LPG</option>
           </select>
           <label htmlFor="transmission">Transmission</label>
           <select

@@ -44,7 +44,7 @@ export default function CarsItem({ cars }) {
               </div>
               <div className="col-6">
                 <div className="w-full inline-flex items-center">
-                  <SVG src="/svg/carsspeed.svg" className="w-10 h-10" />
+                  <SVG src="/svg/carkm.svg" className="w-10 h-10" />
                   <p className="ml-2">{cars.km}</p>
                 </div>
                 <div className="w-full inline-flex items-center">
