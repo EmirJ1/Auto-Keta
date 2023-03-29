@@ -1,17 +1,44 @@
-import React from 'react'
-import SVG from 'react-inlinesvg'
+import Image from 'next/image'
 
 export default function FooterSection() {
   return (
-    <div className="bg-gray-300">
-      <div className="container">
+    <div className="bg-white">
+      <div className="container py-14">
         <div className="row">
-          <div className="col-4"></div>
           <div className="col-4">
-            <a href="https://facebook.com/autoketa">
-              <SVG src="./svg/facebook.svg" className="w-10 h-10" />
+            <Image
+              src="/images/logo.png"
+              width={137}
+              height={123}
+              className="w-auto h-32"
+              alt="logo"
+            />
+            <p className="mt-5">&copy; 2023 , Auto Keta - All rights reservered</p>
+          </div>
+          <div className="lg:col-4 md:col-6">
+            <h3 className="text-2xl text-black">Contact</h3>
+            <p className="mt-9 text-gray-700">Ilindenska 209 , Gostivar , 1230 , North Macedonia</p>
+            <p className="mt-5 text-gray-700">T. +389 70 378 342</p>
+            <p className="mt-5 text-gray-700">E. autoketa@hotmail.com</p>
+          </div>
+          <div className="lg:col-3 md:col-6 lg:offset-1 offset-0 mt-5 md:mt-0">
+            <h3 className="text-2xl text-black">Follow Us</h3>
+            <a
+              href="https://www.facebook.com/autoketa/"
+              target="_blank"
+              rel="noreferrer"
+              className="block mt-9 ml-8 text-gray-700"
+            >
+              Facebook
             </a>
-            <p className="">Instagram</p>
+            <a
+              href="https://www.instagram.com/autoketa1/"
+              target="_blank"
+              rel="norefferer noreferrer"
+              className="block mt-5 ml-8 text-gray-700"
+            >
+              Instagram
+            </a>
           </div>
         </div>
       </div>
