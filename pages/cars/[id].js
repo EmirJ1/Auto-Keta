@@ -12,7 +12,6 @@ function GetRandomItem({ product }) {
   for (let i = 0; i < 5; i++) {
     randomProducts.push(Math.floor(Math.random() * product.length))
   }
-  console.log(randomProducts)
   return (
     <div className="row">
       {randomProducts.map((r) => (
