@@ -7,11 +7,32 @@ import dbConnect from 'utils/mongo'
 
 import Layout from '@/components/layout/Layout'
 
-export default function Car({ car }) {
+function GetRandomItem({ product }) {
+  const randomProducts = []
+  for (let i = 0; i < 5; i++) {
+    randomProducts.push(Math.floor(Math.random() * product.length))
+  }
+  console.log(randomProducts)
+  return (
+    <div className="row">
+      {randomProducts.map((r) => (
+        <div key={product[r]._id} className="col-4 my-5 ">
+          <p>
+            {product[r].mark} {product[r].model}
+          </p>
+          <p>{product[r].year}</p>
+          <p>{product[r].motor}</p>
+        </div>
+      ))}
+    </div>
+  )
+}
+export default function Car({ car, products }) {
   const images = []
   for (let i = 0; i < car.images.length; i++) {
     images.push({ original: car.images[i].url, thumbnail: car.images[i].url })
   }
+
   return (
     <Layout>
       <div className="container">
@@ -82,6 +103,12 @@ export default function Car({ car }) {
           </div>
         </div>
       </div>
+      <div className="container">
+        <div className="row">
+          <p className="mt-5">Te Sugjeruara</p>
+          <GetRandomItem product={products} />
+        </div>
+      </div>
     </Layout>
   )
 }
@@ -90,9 +117,11 @@ export async function getServerSideProps({ params }) {
   try {
     await dbConnect()
     const res = await axios.get(`https://auto.keta.mk/api/cars/${params.id}`)
+    const cars = await axios.get('https://auto.keta.mk/api/cars')
     return {
       props: {
         car: res.data,
+        products: cars.data,
       },
     }
   } catch (error) {
