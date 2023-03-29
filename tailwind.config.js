@@ -11,13 +11,15 @@ module.exports = {
         padding: '1rem',
       },
       fontFamily: {
-        sans: ['var(--font-poppins)', ...config.fontFamily.sans],
+        sans: ['var(--font-jost)', ...config.fontFamily.sans],
       },
       colors: {
+        black: '#333333',
         gray: {
           ...config.colors.gray,
           200: '#F4F4F4',
           400: '#E4DCCF',
+          700: '#9E9E9E',
         },
       },
     },
