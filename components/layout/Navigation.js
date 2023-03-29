@@ -1,16 +1,17 @@
-//Per ti regullu navbar
 import Link from 'next/link'
 import { useState } from 'react'
 import SVG from 'react-inlinesvg'
 
-const NavItem = ({ children, href }) => {
+const NavItem = ({ children, href, className }) => {
   return (
     <li className="w-full md:w-auto md:mr-6">
-      <Link
-        className="block py-4 md:py-0 border-b border-gray-200 md:border-b-0 md:border-transparent"
-        href={href}
-      >
-        {children}
+      <Link href={href} legacyBehavior>
+        <a
+          className={`block py-4 md:py-0 border-b border-gray-200 md:border-b-0 md:border-transparent ${className}
+          `}
+        >
+          {children}
+        </a>
       </Link>
     </li>
   )
@@ -18,33 +19,63 @@ const NavItem = ({ children, href }) => {
 
 export default function Navigation() {
   const [menu, setMenu] = useState(false)
+  const [color, setColor] = useState(false)
 
+  const changeColor = () => {
+    if (window.scrollY >= 90) {
+      setColor(true)
+    } else {
+      setColor(false)
+    }
+  }
+
+  window.addEventListener('scroll', changeColor)
   return (
-    <div className="bg-white shadow-lg">
+    <div
+      className={`fixed w-full top-0 left-0 ${color ? 'bg-black ' : 'bg-black md:bg-transparent'}`}
+      style={{ zIndex: '9999' }}
+    >
       <div className="container">
-        <div className="flex flex-row py-6 justify-between">
-          <div className="md:w-1/2">
-            <p className="font-bold text-black-800 text-5xl"></p>
+        <div className="row py-6 justify-between items-center">
+          <div className="col-6">
+            <Link href="/">
+              <p className="text-white uppercase text-xl font-bold">Auto Keta</p>
+            </Link>
           </div>
-          <div className="w-1/4 md:hidden block">
+          <div className="col-2 md:hidden block">
             <label htmlFor="menu-toggle" className="cursor-pointer">
               <SVG
-                src="/svg/menu.svg"
-                className="fill-current text-black w-6 h-6"
+                src="../svg/menu.svg"
+                className={`fill-current ${color ? 'text-white' : 'text-white'} w-6 h-6`}
                 onClick={() => setMenu(!menu)}
               />
             </label>
           </div>
 
           <div
-            className={`md:w-1/2 md:flex justify-center md:justify-end ${
+            className={`md:col-6 md:flex justify-center md:justify-end bg-black md:bg-transparent ${
               menu ? ' flex' : ' hidden'
             }`}
           >
             <ul className="flex w-full p-5 flex-col md:w-auto md:p-0 md:flex-row items-center">
-              <NavItem href="/">Home</NavItem>
-              <NavItem href="/">Cars</NavItem>
-              <NavItem href="/about">About</NavItem>
+              <NavItem
+                href="/"
+                className={`${color ? 'text-white ' : 'text-white md:text-white'} `}
+              >
+                Home
+              </NavItem>
+              <NavItem
+                href="/cars"
+                className={`${color ? 'text-white' : 'text-white md:text-white'} `}
+              >
+                Cars
+              </NavItem>
+              <NavItem
+                href="/contact"
+                className={`${color ? 'text-white' : 'text-white md:text-white'} `}
+              >
+                Contact
+              </NavItem>
             </ul>
           </div>
         </div>
