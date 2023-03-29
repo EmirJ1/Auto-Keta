@@ -102,6 +102,7 @@ export default function ProductEdit({ product }) {
               >
                 <option value="benzin">Benzin</option>
                 <option value="diesel">Diesel</option>
+                <option value="benzin">Benzin/LPG</option>
               </select>
             </div>
             <div className="col-12">
