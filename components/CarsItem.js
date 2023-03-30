@@ -31,15 +31,18 @@ export default function CarsItem({ cars }) {
             />
 
             <div className="row justify-center p-4">
+              <div className="col-12">
+                <p className="text-xl font-semibold my-2 text-center">{`${cars.mark} ${cars.model} ${cars.motor}`}</p>
+              </div>
               <div className="col-6">
                 <div className="w-full inline-flex items-center">
-                  <SVG src="/svg/calendar.svg" className="w-10 h-10" />
+                  <SVG src="/svg/calendar.svg" className="w-8 h-8" />
                   <p className="ml-2">{cars.year}</p>
                 </div>
               </div>
               <div className="col-6">
                 <div className="w-full inline-flex items-center">
-                  <SVG src="/svg/carkm.svg" className="w-10 h-10" />
+                  <SVG src="/svg/carkm.svg" className="w-8 h-8" />
                   <p className="ml-2">{cars.km}</p>
                 </div>
               </div>

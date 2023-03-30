@@ -19,7 +19,7 @@ export default function CarsSection({ cars }) {
               <CarsItem key={car._id} cars={car} />
             ))}
         </div>
-        <div className="flex md:flex-row flex-wrap items-center mt-5">
+        <div className="flex md:flex-row flex-wrap items-center mb-8">
           <Button disabled={_DATA.currentPage == 1} className="mr-4" onClick={() => _DATA.prev()}>
             Previous
           </Button>
