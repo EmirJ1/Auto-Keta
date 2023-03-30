@@ -36,7 +36,7 @@ export default function CarsItem({ cars }) {
               </div>
               <div className="col-6">
                 <div className="w-full inline-flex items-center">
-                  <SVG src="/svg/calendar.svg" className="w-8 h-8" />
+                  <SVG src="/svg/calendar.svg" className="w-7 h-7" />
                   <p className="ml-2">{cars.year}</p>
                 </div>
               </div>

@@ -6,7 +6,7 @@ import Layout from '@/layout/Layout'
 
 export default function Home({ cars }) {
   return (
-    <Layout title="Home">
+    <Layout title="Cars">
       {/* Header Section Example */}
       <HeaderSection />
       {/* Cars Section */}

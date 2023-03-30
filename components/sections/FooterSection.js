@@ -27,7 +27,7 @@ export default function FooterSection() {
               href="https://www.facebook.com/autoketa/"
               target="_blank"
               rel="noreferrer"
-              className="block mt-9 ml-8 text-gray-800"
+              className="block mt-9 ml-8 text-gray-800 hover:bg-blue-700 hover:text-white"
             >
               Facebook
             </a>
