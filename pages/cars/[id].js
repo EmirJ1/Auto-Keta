@@ -42,7 +42,7 @@ function GetRandomItem({ product }) {
                     </div>
                   </div>
                   <div className="col-6">
-                    <div className="w-full inline-flex items-center">
+                    <div className="w-full inline-flex items-center justify-end">
                       <SVG src="/svg/carkm.svg" className="w-5 h-5" />
                       <p className="ml-2">{product[r].km}</p>
                     </div>

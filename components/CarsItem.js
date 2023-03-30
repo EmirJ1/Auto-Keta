@@ -41,7 +41,7 @@ export default function CarsItem({ cars }) {
                 </div>
               </div>
               <div className="col-6">
-                <div className="w-full inline-flex items-center">
+                <div className="w-full inline-flex justify-end">
                   <SVG src="/svg/carkm.svg" className="w-8 h-8" />
                   <p className="ml-2">{cars.km}</p>
                 </div>

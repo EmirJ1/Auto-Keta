@@ -17,9 +17,9 @@ export default function FooterSection() {
           </div>
           <div className="lg:col-4 md:col-6">
             <h3 className="text-2xl text-black">Contact</h3>
-            <p className="mt-9 text-gray-700">Ilindenska 209 , Gostivar , 1230 , North Macedonia</p>
-            <p className="mt-5 text-gray-700">T. +389 70 378 342</p>
-            <p className="mt-5 text-gray-700">E. autoketa@hotmail.com</p>
+            <p className="mt-9 text-gray-800">Ilindenska 209 , Gostivar , 1230 , North Macedonia</p>
+            <p className="mt-5 text-gray-800">T. +389 70 378 342</p>
+            <p className="mt-5 text-gray-800">E. autoketa@hotmail.com</p>
           </div>
           <div className="lg:col-3 md:col-6 lg:offset-1 offset-0 mt-5 md:mt-0">
             <h3 className="text-2xl text-black">Follow Us</h3>
@@ -27,7 +27,7 @@ export default function FooterSection() {
               href="https://www.facebook.com/autoketa/"
               target="_blank"
               rel="noreferrer"
-              className="block mt-9 ml-8 text-gray-700"
+              className="block mt-9 ml-8 text-gray-800"
             >
               Facebook
             </a>
@@ -35,7 +35,7 @@ export default function FooterSection() {
               href="https://www.instagram.com/autoketa1/"
               target="_blank"
               rel="norefferer noreferrer"
-              className="block mt-5 ml-8 text-gray-700"
+              className="block mt-5 ml-8 text-gray-800"
             >
               Instagram
             </a>
