@@ -5,7 +5,7 @@ export default function FooterSection() {
     <div className="bg-white">
       <div className="container py-14">
         <div className="row">
-          <div className="col-4">
+          <div className="lg:col-4 order-last lg:order-none mt-5 lg:mt-0">
             <Image
               src="/images/logo.png"
               width={137}
