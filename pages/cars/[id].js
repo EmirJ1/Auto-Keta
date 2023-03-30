@@ -1,29 +1,64 @@
 //Facja e ni produkti si duket mrenda kur klikon te ni veture
 import axios from 'axios'
+import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 import ReactImageGallery from 'react-image-gallery'
 import SVG from 'react-inlinesvg'
 import dbConnect from 'utils/mongo'
 
-import Layout from '@/components/layout/Layout'
+import Layout2 from '@/components/layout/Layout2'
 
 function GetRandomItem({ product }) {
   const randomProducts = []
-  for (let i = 0; i < 5; i++) {
-    randomProducts.push(Math.floor(Math.random() * product.length))
+  for (let i = 0; i < 4; i++) {
+    if (i !== i - 1) {
+      randomProducts.push(Math.floor(Math.random() * product.length))
+    }
   }
   return (
-    <div className="row">
+    <>
       {randomProducts.map((r) => (
-        <div key={product[r]._id} className="col-4 my-5 ">
-          <p>
-            {product[r].mark} {product[r].model}
-          </p>
-          <p>{product[r].year}</p>
-          <p>{product[r].motor}</p>
+        <div key={product[r]._id} className="lg:col-3 md:col-6 mb-8 ">
+          <Link href={`/cars/${product[r]._id}`} legacyBehavior>
+            <a>
+              <div className="bg-white p-1 rounded-xl">
+                <Image
+                  src={product[r].images[0].url}
+                  alt="car"
+                  width={338}
+                  height={214}
+                  className="w-full rounded-xl cars-img"
+                />
+
+                <div className="row justify-center p-4">
+                  <div className="col-12">
+                    <p className="text-xl font-semibold my-2 text-center">{`${product[r].mark} ${product[r].model} ${product[r].motor}`}</p>
+                  </div>
+                  <div className="col-6">
+                    <div className="w-full inline-flex items-center">
+                      <SVG src="/svg/calendar.svg" className="w-5 h-5" />
+                      <p className="ml-2">{product[r].year}</p>
+                    </div>
+                  </div>
+                  <div className="col-6">
+                    <div className="w-full inline-flex items-center">
+                      <SVG src="/svg/carkm.svg" className="w-5 h-5" />
+                      <p className="ml-2">{product[r].km}</p>
+                    </div>
+                  </div>
+                  <div className="col-6 mt-5 text-center">
+                    <p className="font-bold text-xl">
+                      {product[r].price.toLocaleString('en-US')} €
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </Link>
         </div>
       ))}
-    </div>
+    </>
   )
 }
 export default function Car({ car, products }) {
@@ -33,7 +68,7 @@ export default function Car({ car, products }) {
   }
 
   return (
-    <Layout>
+    <Layout2>
       <div className="container">
         <div className="row my-5">
           <div className="md:col-8">
@@ -104,11 +139,11 @@ export default function Car({ car, products }) {
       </div>
       <div className="container">
         <div className="row">
-          <p className="mt-5">Te Sugjeruara</p>
+          <p className="my-5 text-3xl font-bold">Te Sugjeruara</p>
           <GetRandomItem product={products} />
         </div>
       </div>
-    </Layout>
+    </Layout2>
   )
 }
 
