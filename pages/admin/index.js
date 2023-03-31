@@ -4,12 +4,12 @@ import axios from 'axios'
 import { useState } from 'react'
 
 import Add from '@/components/Add'
-import Layout from '@/components/layout/Layout'
+import Layout2 from '@/components/layout/Layout2'
 import Pagination from '@/components/Pagination'
 export default function index({ cars }) {
   const [add, setAdd] = useState(true)
   return (
-    <Layout title="Admin">
+    <Layout2 title="Admin">
       {/* {console.log(cars)} */}
       <div className="container">
         <div className="row">
@@ -20,7 +20,7 @@ export default function index({ cars }) {
           </div>
         </div>
       </div>
-    </Layout>
+    </Layout2>
   )
 }
 
