@@ -5,7 +5,7 @@ import { useRouter } from 'next/router'
 import { useState } from 'react'
 
 import Button from '@/components/Button'
-import Layout from '@/components/layout/Layout'
+import Layout2 from '@/components/layout/Layout2'
 
 export default function Login() {
   const [username, setUsername] = useState(null)
@@ -25,7 +25,7 @@ export default function Login() {
     }
   }
   return (
-    <Layout title="Login">
+    <Layout2 title="Login">
       <div className="container">
         <div className="row md:my-20 justify-center">
           <div className="lg:col-6 bg-gray-400 text-center rounded-xl py-5">
@@ -55,6 +55,6 @@ export default function Login() {
           </div>
         </div>
       </div>
-    </Layout>
+    </Layout2>
   )
 }
