@@ -15,7 +15,7 @@ export default function Pagination({ cars }) {
 
   async function handleDelete(id) {
     try {
-      await axios.delete('https://auto.keta.mk/api/cars/' + id)
+      await axios.delete('https://autoketa.mk/api/cars/' + id)
       setCarsList(carsList.filter((car) => car._id !== id))
     } catch (err) {
       // eslint-disable-next-line no-console

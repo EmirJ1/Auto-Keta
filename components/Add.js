@@ -47,7 +47,7 @@ export default function Add({ setAdd }) {
         motor,
         sale,
       }
-      await axios.post('https://auto.keta.mk/api/cars', newProduct)
+      await axios.post('https://autoketa.mk/api/cars', newProduct)
       //   setAdd(true)
       Router.reload()
       //   setAdd(true)

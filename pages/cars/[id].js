@@ -150,8 +150,8 @@ export default function Car({ car, products }) {
 export async function getServerSideProps({ params }) {
   try {
     await dbConnect()
-    const res = await axios.get(`https://auto.keta.mk/api/cars/${params.id}`)
-    const cars = await axios.get('https://auto.keta.mk/api/cars')
+    const res = await axios.get(`https://autoketa.mk/api/cars/${params.id}`)
+    const cars = await axios.get('https://autoketa.mk/api/cars')
     return {
       props: {
         car: res.data,
