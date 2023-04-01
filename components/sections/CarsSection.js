@@ -14,7 +14,7 @@ export default function CarsSection({ cars }) {
         <div className="row my-5">
           {_DATA
             .currentData(cars)
-            .sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt))
+            .sort((a, b) => new Date(a.updatedAt) - new Date(b.updatedAt))
             .map((car) => (
               <CarsItem key={car._id} cars={car} />
             ))}
