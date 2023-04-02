@@ -28,7 +28,7 @@ export default function CarsSection({ cars }) {
           <div className="row justify-center">
             <div className="col-8 my-5">
               <div className="row">
-                <div className="col-4">
+                <div className="lg:col-4">
                   <p htmlFor="mark" className="text-center text-xl">
                     Mark
                   </p>
@@ -52,7 +52,7 @@ export default function CarsSection({ cars }) {
                     <option value="Mazda">Mazda</option>
                   </select>
                 </div>
-                <div className="col-4">
+                <div className="lg:col-4 my-5 lg:my-0">
                   <p htmlFor="model" className="text-center text-xl">
                     Model
                   </p>
@@ -71,7 +71,7 @@ export default function CarsSection({ cars }) {
                     ))}
                   </select>
                 </div>
-                <div className="col-4">
+                <div className="lg:col-4">
                   <p htmlFor="year" className="text-center text-xl">
                     Year
                   </p>
