@@ -110,7 +110,14 @@ export default function Add({ setAdd }) {
           <label htmlFor="sale">OLD</label>
           <input type="radio" name="sale" value="2" onChange={(e) => setSale(e.target.value)} />
           <label htmlFor="sale">SOLD</label>
-          <button onClick={() => handleCreate()}>Add</button>
+          <div className="col-12">
+            <button
+              className="mt-5 bg-green-500 px-4 py-2 rounded-md text-white"
+              onClick={() => handleCreate()}
+            >
+              Add
+            </button>
+          </div>
         </div>
       </div>
     </div>
