@@ -13,11 +13,16 @@ export default function index({ cars }) {
       {/* {console.log(cars)} */}
       <div className="container">
         <div className="row">
-          <div className="col-12">
-            <button onClick={() => setAdd(false)}>Add</button>
-            {!add && <Add setAdd={setAdd} />}
-            <Pagination cars={cars} />
+          <div className="col-12 text-end">
+            <button
+              onClick={() => setAdd(false)}
+              className="px-5 py-3 text-end bg-green-500 text-white rounded-md my-4"
+            >
+              Add
+            </button>
           </div>
+          <div className="col-12">{!add && <Add setAdd={setAdd} />}</div>
+          <Pagination cars={cars} />
         </div>
       </div>
     </Layout2>
