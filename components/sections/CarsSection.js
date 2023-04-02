@@ -23,8 +23,11 @@ export default function CarsSection({ cars }) {
   const arr = Array.from({ length: _DATA.maxPage }, (_, i) => i + 1)
   return (
     <>
-      <div className="bg-white">
+      <div className="bg-white mt-6">
         <div className="container">
+          <p className="text-center text-3xl">
+                   Zgjidhe veturen tuaj
+          </p>
           <div className="row justify-center">
             <div className="col-8 my-5">
               <div className="row">

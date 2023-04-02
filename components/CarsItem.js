@@ -30,8 +30,8 @@ export default function CarsItem({ cars }) {
               className="w-full rounded-xl cars-img"
             />
 
-            <div className="row justify-center p-4">
-              <div className="col-12">
+            <div className="row justify-center p-4 ">
+              <div className="col-12 ">
                 <p className="text-xl font-semibold my-2 text-center">{`${cars.mark} ${cars.model} ${cars.motor}`}</p>
               </div>
               <div className="col-6">
