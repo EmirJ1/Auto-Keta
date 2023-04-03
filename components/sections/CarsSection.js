@@ -10,16 +10,15 @@ export default function CarsSection({ cars }) {
   for (let i = 2003; i <= 2023; i++) {
     years.push(i)
   }
-  const models = []
-  cars.filter((car) => {
-    models.push(car.model)
-  })
-  models.reduce((unique, item) => (unique.includes(item) ? unique : [...unique, item]), [])
+  const models = ['Golf VI', 'Golf VII', 'B class']
+
+  // models.reduce((unique, item) => (unique.includes(item) ? unique : [...unique, item]), [])
 
   const [mark, setMark] = useState('all')
   const [model, setModel] = useState('all')
   const [year, setYear] = useState('all')
-  const _DATA = usePagination(cars, 9)
+  const lifo = cars.sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt))
+  const _DATA = usePagination(lifo, 9)
   const arr = Array.from({ length: _DATA.maxPage }, (_, i) => i + 1)
   return (
     <>
@@ -101,16 +100,14 @@ export default function CarsSection({ cars }) {
           <div className="row my-5">
             {mark == 'all' && year == 'all' && model == 'all' ? (
               <>
-                {cars
-                  .sort((a, b) => new Date(a.updatedAt) - new Date(b.updatedAt))
-                  .map((car) => (
-                    <CarsItem key={car._id} cars={car} />
-                  ))}
+                {_DATA.currentData(lifo).map((car) => (
+                  <CarsItem key={car._id} cars={car} />
+                ))}
               </>
             ) : mark == 'all' && model == 'all' ? (
               <>
-                {cars
-                  .sort((a, b) => new Date(a.updatedAt) - new Date(b.updatedAt))
+                {_DATA
+                  .currentData(lifo)
                   .filter((car) => car.year == year)
                   .map((car) => (
                     <CarsItem key={car._id} cars={car} />
@@ -118,8 +115,8 @@ export default function CarsSection({ cars }) {
               </>
             ) : year == 'all' && model == 'all' ? (
               <>
-                {cars
-                  .sort((a, b) => new Date(a.updatedAt) - new Date(b.updatedAt))
+                {_DATA
+                  .currentData(lifo)
                   .filter((car) => car.mark == mark)
                   .map((car) => (
                     <CarsItem key={car._id} cars={car} />
@@ -127,8 +124,8 @@ export default function CarsSection({ cars }) {
               </>
             ) : mark == 'all' && year == 'all' ? (
               <>
-                {cars
-                  .sort((a, b) => new Date(a.updatedAt) - new Date(b.updatedAt))
+                {_DATA
+                  .currentData(lifo)
                   .filter((car) => car.model == model)
                   .map((car) => (
                     <CarsItem key={car._id} cars={car} />
@@ -136,7 +133,8 @@ export default function CarsSection({ cars }) {
               </>
             ) : mark != 'all' && year == 'all' ? (
               <>
-                {cars
+                {_DATA
+                  .currentData(lifo)
                   .sort((a, b) => new Date(a.updatedAt) - new Date(b.updatedAt))
                   .filter(function (car) {
                     return car.model == model && car.mark == mark
@@ -147,7 +145,8 @@ export default function CarsSection({ cars }) {
               </>
             ) : mark == 'all' && year != 'all' ? (
               <>
-                {cars
+                {_DATA
+                  .currentData(lifo)
                   .sort((a, b) => new Date(a.updatedAt) - new Date(b.updatedAt))
                   .filter(function (car) {
                     return car.model == model && car.year == year
@@ -158,7 +157,8 @@ export default function CarsSection({ cars }) {
               </>
             ) : (
               <>
-                {cars
+                {_DATA
+                  .currentData(lifo)
                   .sort((a, b) => new Date(a.updatedAt) - new Date(b.updatedAt))
                   .filter(function (car) {
                     return car.mark == mark && car.model == model && car.year == year

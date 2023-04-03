@@ -8,7 +8,8 @@ import usePagination from 'utils/usePagination'
 import Button from './Button'
 import ProductEdit from './ProductEdit'
 export default function Pagination({ cars }) {
-  const _DATA = usePagination(cars, 10)
+  const lifo = cars.sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt))
+  const _DATA = usePagination(lifo, 10)
   const arr = Array.from({ length: _DATA.maxPage }, (_, i) => i + 1)
   const [carsList, setCarsList] = useState(cars)
   //   const [edit, setEdit] = useState(true)
@@ -27,7 +28,7 @@ export default function Pagination({ cars }) {
   return (
     <>
       {_DATA
-        .currentData(cars)
+        .currentData(lifo)
         .sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt))
         .map((car) => (
           <div className="flex flex-row my-10 border-b border-black pb-8" key={car._id}>
