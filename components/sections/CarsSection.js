@@ -26,7 +26,7 @@ export default function CarsSection({ cars }) {
       <div className="bg-white mt-6">
         <div className="container">
           <p className="text-center text-3xl">
-                   Zgjidhe veturen tuaj
+             Zgjidhe veturen tuaj
           </p>
           <div className="row justify-center">
             <div className="col-8 my-5">
@@ -39,7 +39,7 @@ export default function CarsSection({ cars }) {
                     name="mark"
                     onChange={(e) => setMark(e.target.value)}
                     className="w-full ml-2 border rounded-md p-1 text-center  border-black"
-                  >
+                   >
                     <option value="all">Zgjidh Marken</option>
                     <option value="Mercedes">Mercedes</option>
                     <option value="Audi">Audi</option>
