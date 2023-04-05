@@ -15,14 +15,14 @@ export default function Layout({ children, title = null }) {
         <title>{title ? `${title} - Auto Keta` : 'Auto Keta'}</title>
 
         {/* Favicons */}
-        <link rel="icon" href="/favicons/keta.ico" sizes="32x32" />
-        <link rel="icon" href="/favicons/keta.ico" sizes="57x57" />
-        <link rel="icon" href="/favicons/keta.ico" sizes="76x76" />
-        <link rel="icon" href="/favicons/keta.ico" sizes="96x96" />
-        <link rel="icon" href="/favicons/keta.ico" sizes="128x128" />
-        <link rel="icon" href="/favicons/keta.ico" sizes="192x192" />
+        <link rel="icon" href="/favicons/logo.ico" sizes="32x32" />
+        <link rel="icon" href="/favicons/logo.ico" sizes="57x57" />
+        <link rel="icon" href="/favicons/logo.ico" sizes="76x76" />
+        <link rel="icon" href="/favicons/logo.ico" sizes="96x96" />
+        <link rel="icon" href="/favicons/logo..ico" sizes="128x128" />
+        <link rel="icon" href="/favicons/logo.ico" sizes="192x192" />
 
-        <link rel="icon" href="/favicons/keta.ico" sizes="228x228" />
+        <link rel="icon" href="/favicons/logo.ico" sizes="228x228" />
       </Head>
       <div className={`font-sans antialiased flex flex-col ${dev ? 'debug-screens' : ''}`}>
         {/* Navigation here */}

@@ -2,6 +2,7 @@
 import axios from 'axios'
 import Router from 'next/router'
 import { useState } from 'react'
+import SVG from 'react-inlinesvg'
 
 import EditInput from './EditInput'
 
@@ -46,18 +47,19 @@ export default function ProductEdit({ product }) {
   }
   return (
     <>
-      <button className="px-4 text-white bg-blue-400 rounded-xl" onClick={() => setEdit(!edit)}>
+      <button className="px-4 text-black rounded-xl" onClick={() => setEdit(!edit)}>
+        <SVG src="/svg/edit.svg" className="w-7 h-7" />
         Edit
       </button>
       <div
         style={{ zIndex: 9999 }}
-        className={`bg-gray-400 w-full h-screen absolute top-0 left-0 items-center justify-center  ${
+        className={`bg-transparent w-full h-screen absolute top-15 left-0 items-center justify-center  ${
           edit ? ' flex' : ' hidden'
         }`}
       >
         <div
           style={{ width: 500 }}
-          className="bg-white rounded-2xl p-12 flex flex-col items-center justify-center"
+          className="bg-gray-200 rounded-2xl p-12 flex flex-col items-center justify-center"
         >
           <button onClick={() => setEdit(false)}>X</button>
           <h1 className="mt-2 font-bold">Update</h1>

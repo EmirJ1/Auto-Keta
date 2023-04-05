@@ -3,6 +3,7 @@ import axios from 'axios'
 import Image from 'next/image'
 import Router from 'next/router'
 import React, { useState } from 'react'
+import SVG from 'react-inlinesvg'
 import usePagination from 'utils/usePagination'
 
 import Button from './Button'
@@ -44,9 +45,10 @@ export default function Pagination({ cars }) {
               <div className="flex flex-inline">
                 <ProductEdit product={car} />
                 <button
-                  className="ml-4 bg-red-500 text-white px-3 rounded-xl"
+                  className="ml-4 py-5 text-black px-3 rounded-xl"
                   onClick={() => handleDelete(car._id)}
                 >
+                  <SVG src="/svg/delete.svg" className="w-7 h-7" />
                   Delete
                 </button>
               </div>

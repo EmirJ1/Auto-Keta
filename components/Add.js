@@ -103,7 +103,7 @@ export default function Add({ setAdd }) {
             <option value="automatic">Automatic</option>
             <option value="step-tronic">Step-Tronic</option>
           </select>
-          <p className="my-5">NEW/OLD/SOLD</p>
+          <p className="my-5">NEW / OLD / SOLD</p>
           <input type="radio" name="sale" value="0" onChange={(e) => setSale(e.target.value)} />
           <label htmlFor="sale">NEW</label>
           <input type="radio" name="sale" value="1" onChange={(e) => setSale(e.target.value)} />

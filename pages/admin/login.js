@@ -28,9 +28,9 @@ export default function Login() {
     <Layout2 title="Login">
       <div className="container">
         <div className="row md:my-20 justify-center">
-          <div className="lg:col-6 bg-gray-400 text-center rounded-xl py-5">
+          <div className="lg:col-6 bg-gray-300 text-center rounded-xl py-5">
             <Image
-              src="/images/emir.jpg"
+              src="/images/logo.jpg"
               width={160}
               height={160}
               className="w-40 h-auto rounded-full mx-auto"
