@@ -22,7 +22,7 @@ function GetRandomItem({ product }) {
         <div key={product[r]._id} className="lg:col-3 md:col-6 mb-8 ">
           <Link href={`/cars/${product[r]._id}`} legacyBehavior>
             <a>
-              <div className="bg-white p-1 rounded-xl">
+              <div className="bg-gray-200 p- rounded-xl">
                 <Image
                   src={product[r].images[0].url}
                   alt="car"
@@ -36,16 +36,10 @@ function GetRandomItem({ product }) {
                     <p className="text-xl font-semibold my-2 text-center">{`${product[r].mark} ${product[r].model} ${product[r].motor}`}</p>
                   </div>
                   <div className="col-6">
-                    <div className="w-full inline-flex items-center">
-                      <SVG src="/svg/calendar.svg" className="w-5 h-5" />
-                      <p className="ml-2">{product[r].year}</p>
-                    </div>
+                    <div className="w-full inline-flex items-center"></div>
                   </div>
                   <div className="col-6">
-                    <div className="w-full inline-flex items-center justify-end">
-                      <SVG src="/svg/carkm.svg" className="w-5 h-5" />
-                      <p className="ml-2">{product[r].km}</p>
-                    </div>
+                    <div className="w-full inline-flex items-center justify-end"></div>
                   </div>
                   <div className="col-6 mt-5 text-center">
                     <p className="font-bold text-xl">
