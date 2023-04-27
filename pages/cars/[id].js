@@ -22,7 +22,7 @@ function GetRandomItem({ product }) {
         <div key={product[r]._id} className="lg:col-3 md:col-6 mb-8 ">
           <Link href={`/cars/${product[r]._id}`} legacyBehavior>
             <a>
-              <div className="bg-gray-200 p- rounded-xl">
+              <div className="bg-gray-200 hover:bg-gray-300 p- rounded-xl">
                 <Image
                   src={product[r].images[0].url}
                   alt="car"
