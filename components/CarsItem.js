@@ -2,6 +2,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+import SVG from 'react-inlinesvg'
 
 export default function CarsItem({ cars }) {
   return (
@@ -28,19 +29,24 @@ export default function CarsItem({ cars }) {
               height={214}
               className="w-full rounded-xl cars-img"
             />
-            <div className="row justify-center p-4 hover:text-red-600">
-              <div className="border-b-2 relative border-black" style={{ width: 210 }}>
-                <div className="col-12 ">
-                  <p className="text-xl font-semibold my-2 text-center">{`${cars.mark} ${cars.model} ${cars.motor}`}</p>
-                </div>
-                <div className="border-t-2 relative top-8  border-black" style={{ width: 180 }}>
-                  <div className="col-6">
-                    <div className="w-full inline-flex items-center"></div>
-                  </div>
-                  <div className="col-6">
-                    <div className="w-full inline-flex justify-end"></div>
-                  </div>
-                </div>
+            <div className="row justify-center p-4 ">
+              <div className="col-12 ">
+                <p className="text-xl font-semibold my-2  text-start hover:text-red-600">{`${cars.mark} ${cars.model} ${cars.motor}`}</p>
+                <p className="text-base  text-start flex">
+                  <SVG className="mr-2" src="../svg/carskm.svg"></SVG>
+                  {`${cars.km}`}
+                </p>
+                <p className="text-base text-start flex">
+                  <SVG className="mr-2 mb-3" src="../svg/calendar.svg"></SVG>
+                  {`${cars.year}`}
+                </p>
+                <p className="text-xl ml-2 text-start">{cars.price.toLocaleString('en-US')} €</p>
+              </div>
+              <div className="col-6">
+                <div className="w-full inline-flex items-center"></div>
+              </div>
+              <div className="col-6">
+                <div className="w-full inline-flex justify-end"></div>
               </div>
             </div>
           </div>
