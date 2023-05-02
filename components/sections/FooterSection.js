@@ -18,9 +18,13 @@ export default function FooterSection() {
           <div className="lg:col-4 md:col-6">
             <h3 className="text-2xl text-black">Contact</h3>
             <p className="mt-9 text-gray-800">Ilindenska 209 , Gostivar , 1230 , North Macedonia</p>
+<<<<<<< HEAD
             <a href="tel: +38970378342">
               <p className="mt-5 text-gray-800 hover:underline">T. +389 70 378 342</p>
             </a>
+=======
+            <a href="tel:+389 70378342"><p className="mt-5 text-gray-800">T. +389 70 378 342</p></a>
+>>>>>>> 532e232382975ab7401cdaa42991d6b55d489bac
             <p className="mt-5 text-gray-800">E. autoketa@hotmail.com</p>
           </div>
           <div className="lg:col-3 md:col-6 lg:offset-1 offset-0 mt-5 md:mt-0">
