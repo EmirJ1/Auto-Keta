@@ -7,16 +7,30 @@ import CarsItem from '../CarsItem'
 
 export default function CarsSection({ cars }) {
   const years = []
-  for (let i = 2003; i <= 2023; i++) {
+  for (let i = 2003; i <= new Date().getFullYear(); i++) {
     years.push(i)
   }
-  const models = ['Golf VI', 'Golf VII', 'B class']
-
-  // models.reduce((unique, item) => (unique.includes(item) ? unique : [...unique, item]), [])
-
+  const models = []
   const [mark, setMark] = useState('all')
   const [model, setModel] = useState('all')
   const [year, setYear] = useState('all')
+  const [price, setPrice] = useState(500)
+  function handlePrice(e) {
+    setPrice(e.target.value)
+  }
+  if (mark == 'all') {
+    cars.filter((car) => {
+      models.push(car.model)
+    })
+  } else {
+    let filteredMark = cars.filter((car) => car.mark === mark)
+    filteredMark.filter((car) => {
+      models.push(car.model)
+    })
+  }
+  let uniqueModels = models.filter((item, index) => {
+    return models.indexOf(item) === index
+  })
   const lifo = cars.sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt))
   const _DATA = usePagination(lifo, 9)
   const arr = Array.from({ length: _DATA.maxPage }, (_, i) => i + 1)
@@ -62,7 +76,7 @@ export default function CarsSection({ cars }) {
                     className="w-full ml-2 border rounded-md p-1 text-center  border-black"
                   >
                     <option value={'all'}>Zgjidh Modelin</option>
-                    {models.map((modele) => (
+                    {uniqueModels.map((modele) => (
                       <>
                         <option key={modele} value={modele}>
                           {modele}
@@ -89,6 +103,10 @@ export default function CarsSection({ cars }) {
                       </>
                     ))}
                   </select>
+                </div>
+                <div className="col-12">
+                  <input type="range" onInput={handlePrice} />
+                  <p>{price}</p>
                 </div>
               </div>
             </div>
