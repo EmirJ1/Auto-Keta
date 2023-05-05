@@ -31,23 +31,31 @@ export default function CarsItem({ cars }) {
             />
             <div className="row justify-center p-4 ">
               <div className="col-12 ">
-                <p className="text-xl font-semibold my-2  text-start hover:text-red-600">{`${cars.mark} ${cars.model} ${cars.motor}`}</p>
-                <p className="text-base  text-start flex">
-                  <SVG className="mr-2" src="../svg/carskm.svg"></SVG>
-                  {`${cars.km}`}
-                </p>
-                <p className="text-base text-start flex">
-                  <SVG className="mr-2 mb-3" src="../svg/calendar.svg"></SVG>
-                  {`${cars.year}`}
-                </p>
-                <p className="text-xl ml-2 text-start">{cars.price.toLocaleString('en-US')} €</p>
+                <p className="text-xl font-semibold my-2 text-center hover:text-red-600">{`${cars.mark} ${cars.model} ${cars.motor}`}</p>
               </div>
               <div className="col-6">
-                <div className="w-full inline-flex items-center"></div>
+                <div className="w-full inline-flex items-center">
+                  <SVG src="/svg/calendar.svg" className="w-8 h-8" />
+                  <p className="ml-2">{cars.year}</p>
+                </div>
+                <div className="w-full inline-flex items-center">
+                  <SVG src="/svg/car-transmission.svg" className="w-8 h-8" />
+                  <p className="ml-2 uppercase">{cars.transmission}</p>
+                </div>
               </div>
               <div className="col-6">
-                <div className="w-full inline-flex justify-end"></div>
+                <div className="w-full inline-flex items-center">
+                  <SVG src="/svg/carsspeed.svg" className="w-8 h-8" />
+                  <p className="ml-2">{cars.km}</p>
+                </div>
+                <div className="w-full inline-flex items-center">
+                  <SVG src="/svg/petrol.svg" className="w-8 h-8" />
+                  <p className="ml-2 uppercase">{cars.fueltype}</p>
+                </div>
               </div>
+              <p className="text-xl mt-2 text-center font-semibold">
+                {cars.price.toLocaleString('en-US')} €
+              </p>
             </div>
           </div>
         </a>
