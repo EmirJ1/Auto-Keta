@@ -14,7 +14,7 @@ export default function CarsSection({ cars }) {
   const [mark, setMark] = useState('all')
   const [model, setModel] = useState('all')
   const [year, setYear] = useState('all')
-  const [price, setPrice] = useState(500)
+  const [price, setPrice] = useState(2000)
   function handlePrice(e) {
     setPrice(e.target.value)
   }
@@ -31,7 +31,20 @@ export default function CarsSection({ cars }) {
   let uniqueModels = models.filter((item, index) => {
     return models.indexOf(item) === index
   })
-  const lifo = cars.sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt))
+  const arr1 = []
+  if (mark == 'all' && model == 'all' && year == 'all') {
+    cars.filter((car) => {
+      arr1.push(car)
+    })
+  } else {
+    let filteredCar = cars.filter(
+      (car) => car.mark == mark || car.model == model || car.year == year
+    )
+    filteredCar.filter((car) => {
+      arr1.push(car)
+    })
+  }
+  const lifo = arr1.sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt))
   const _DATA = usePagination(lifo, 9)
   const arr = Array.from({ length: _DATA.maxPage }, (_, i) => i + 1)
   return (
@@ -104,8 +117,17 @@ export default function CarsSection({ cars }) {
                     ))}
                   </select>
                 </div>
-                <div className="col-12">
-                  <input type="range" onInput={handlePrice} />
+                <div className="col-12 mt-5">
+                  <p htmlFor="price" className="text-center text-xl">
+                    Price
+                  </p>
+                  <input
+                    type="range"
+                    onInput={handlePrice}
+                    min="2000"
+                    max="60000"
+                    className="w-full"
+                  />
                   <p>{price}</p>
                 </div>
               </div>
@@ -116,13 +138,13 @@ export default function CarsSection({ cars }) {
       <div className="bg-gray-300">
         <div className="container">
           <div className="row my-5">
-            {mark == 'all' && year == 'all' && model == 'all' ? (
+            {mark == 'all' && year == 'all' && model == 'all' && price == 2000 ? (
               <>
                 {_DATA.currentData(lifo).map((car) => (
                   <CarsItem key={car._id} cars={car} />
                 ))}
               </>
-            ) : mark == 'all' && model == 'all' ? (
+            ) : mark == 'all' && model == 'all' && price == 2000 ? (
               <>
                 {_DATA
                   .currentData(lifo)
@@ -131,7 +153,7 @@ export default function CarsSection({ cars }) {
                     <CarsItem key={car._id} cars={car} />
                   ))}
               </>
-            ) : year == 'all' && model == 'all' ? (
+            ) : year == 'all' && model == 'all' && price == 2000 ? (
               <>
                 {_DATA
                   .currentData(lifo)
@@ -140,7 +162,7 @@ export default function CarsSection({ cars }) {
                     <CarsItem key={car._id} cars={car} />
                   ))}
               </>
-            ) : mark == 'all' && year == 'all' ? (
+            ) : mark == 'all' && year == 'all' && price == 2000 ? (
               <>
                 {_DATA
                   .currentData(lifo)
@@ -149,7 +171,7 @@ export default function CarsSection({ cars }) {
                     <CarsItem key={car._id} cars={car} />
                   ))}
               </>
-            ) : mark != 'all' && year == 'all' ? (
+            ) : mark != 'all' && year == 'all' && price == 2000 ? (
               <>
                 {_DATA
                   .currentData(lifo)
@@ -161,7 +183,7 @@ export default function CarsSection({ cars }) {
                     <CarsItem key={car._id} cars={car} />
                   ))}
               </>
-            ) : mark == 'all' && year != 'all' ? (
+            ) : mark == 'all' && year != 'all' && price == 2000 ? (
               <>
                 {_DATA
                   .currentData(lifo)
@@ -173,13 +195,88 @@ export default function CarsSection({ cars }) {
                     <CarsItem key={car._id} cars={car} />
                   ))}
               </>
-            ) : (
+            ) : mark != 'all' && model != 'all' && year != 'all' && price == 2000 ? (
               <>
                 {_DATA
                   .currentData(lifo)
                   .sort((a, b) => new Date(a.updatedAt) - new Date(b.updatedAt))
                   .filter(function (car) {
                     return car.mark == mark && car.model == model && car.year == year
+                  })
+                  .map((car) => (
+                    <CarsItem key={car._id} cars={car} />
+                  ))}
+              </>
+            ) : mark == 'all' && model == 'all' && year == 'all' && price != 2000 ? (
+              <>
+                {_DATA
+                  .currentData(lifo)
+                  .sort((a, b) => new Date(a.updatedAt) - new Date(b.updatedAt))
+                  .filter((car) => car.price < price)
+                  .map((car) => (
+                    <CarsItem key={car._id} cars={car} />
+                  ))}
+              </>
+            ) : mark != 'all' && model == 'all' && price != 2000 ? (
+              <>
+                {_DATA
+                  .currentData(lifo)
+                  .sort((a, b) => new Date(a.updatedAt) - new Date(b.updatedAt))
+                  .filter(function (car) {
+                    return car.mark == mark && car.price < price
+                  })
+                  .map((car) => (
+                    <CarsItem key={car._id} cars={car} />
+                  ))}
+              </>
+            ) : mark != 'all' && model != 'all' && year == 'all' && price != 2000 ? (
+              <>
+                {_DATA
+                  .currentData(lifo)
+                  .sort((a, b) => new Date(a.updatedAt) - new Date(b.updatedAt))
+                  .filter(function (car) {
+                    return car.mark == mark && car.model == model && car.price < price
+                  })
+                  .map((car) => (
+                    <CarsItem key={car._id} cars={car} />
+                  ))}
+              </>
+            ) : mark == 'all' && model == 'all' && year != 'all' && price != 2000 ? (
+              <>
+                {_DATA
+                  .currentData(lifo)
+                  .sort((a, b) => new Date(a.updatedAt) - new Date(b.updatedAt))
+                  .filter(function (car) {
+                    return car.year == year && car.price < price
+                  })
+                  .map((car) => (
+                    <CarsItem key={car._id} cars={car} />
+                  ))}
+              </>
+            ) : mark == 'all' && model != 'all' && year == 'all' && price != 'all' ? (
+              <>
+                {_DATA
+                  .currentData(lifo)
+                  .sort((a, b) => new Date(a.updatedAt) - new Date(b.updatedAt))
+                  .filter(function (car) {
+                    return car.model == model && car.price < price
+                  })
+                  .map((car) => (
+                    <CarsItem key={car._id} cars={car} />
+                  ))}
+              </>
+            ) : (
+              <>
+                {_DATA
+                  .currentData(lifo)
+                  .sort((a, b) => new Date(a.updatedAt) - new Date(b.updatedAt))
+                  .filter(function (car) {
+                    return (
+                      car.mark == mark &&
+                      car.model == model &&
+                      car.year == year &&
+                      car.price < price
+                    )
                   })
                   .map((car) => (
                     <CarsItem key={car._id} cars={car} />
