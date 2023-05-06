@@ -29,9 +29,9 @@ export default function CarsItem({ cars }) {
               height={214}
               className="w-full rounded-xl cars-img"
             />
-            <div className="row justify-center p-4 ">
+            <div className="row justify-center p-4 ml-4 ">
               <div className="col-12 ">
-                <p className="text-xl font-semibold my-2 text-center hover:text-red-600">{`${cars.mark} ${cars.model} ${cars.motor}`}</p>
+                <p className="text-xl font-semibold mr-9 my-2 text-center hover:text-red-600">{`${cars.mark} ${cars.model} ${cars.motor}`}</p>
               </div>
               <div className="col-6">
                 <div className="w-full inline-flex items-center">
