@@ -6,10 +6,52 @@ import { useState } from 'react'
 import styles from '../styles/Add.module.css'
 import AdminInput from './AdminInput'
 import CarOptionInput from './CarOptionInput'
+import ExtraCheckbox from './ExtraCheckbox'
 import uploadCloudinary from './Upload'
 import YearOption from './YearOption'
 
 export default function Add({ setAdd }) {
+  const extrasList = [
+    'ESP',
+    'ABS',
+    'Navigation',
+    'Karrige e perparme elekt.',
+    'Karriget e pasme elekt.',
+    'Sistemi Start/Stop',
+    'Sensori i shiut',
+    'Ngrohja e sediljeve të përparme',
+    'Ngrohja e sediljeve të pasme',
+    'Kondicioner',
+    'Televizor',
+    'Kabinë virtuale',
+    'Kompjuter udhëtimi',
+    'Elektriciteti i retrovizorëve',
+    'Tempomat',
+    'Bluetooth',
+    'Ngrohja e timonit',
+    'Euro Kuka',
+    'Elektriciteti i dritareve',
+    'Çati diellore',
+    'Kontrollet e timonit',
+    'Timoni me energji elektrike (Servo)',
+    'Dritat ksenon',
+    'Dritat LED',
+    'Senzor parkimi',
+    'Spërkatjet e farave',
+    'Maglenka',
+    'Mbyllje qendrore',
+    'Enterior lekure',
+    'USB Port',
+    'AUX Port',
+    'Touchscreen',
+    'Kamera parkimi',
+    'Autohold',
+    'Asistencë parkimi',
+    'F1 Menuvac',
+    'Gjurmimi automatik i korsisë',
+    'Sensori i presionit të gomave',
+    'AIRBAGS',
+  ]
   const [files, setFiles] = useState([])
   const [mark, setMark] = useState(null)
   const [model, setModel] = useState(null)
@@ -21,7 +63,17 @@ export default function Add({ setAdd }) {
   const [chair, setChair] = useState(null)
   const [color, setColor] = useState(null)
   const [motor, setMotor] = useState(null)
+  const [extras, setExtras] = useState([])
   const [sale, setSale] = useState(null)
+  const handleCheck = (event) => {
+    var updatedList = [...extras]
+    if (event.target.checked) {
+      updatedList = [...extras, event.target.value]
+    } else {
+      updatedList.splice(extras.indexOf(event.target.value), 1)
+    }
+    setExtras(updatedList)
+  }
   async function handleCreate() {
     const data = new FormData()
     data.append('file', files)
@@ -46,8 +98,9 @@ export default function Add({ setAdd }) {
         color,
         motor,
         sale,
+        extras,
       }
-      await axios.post('https://autoketa.mk/api/cars', newProduct)
+      await axios.post('http://localhost:3000/api/cars', newProduct)
       //   setAdd(true)
       Router.reload()
       //   setAdd(true)
@@ -56,7 +109,6 @@ export default function Add({ setAdd }) {
       console.log(err)
     }
   }
-
   return (
     <div className="container">
       <div className="row justify-center">
@@ -103,6 +155,47 @@ export default function Add({ setAdd }) {
             <option value="automatic">Automatic</option>
             <option value="step-tronic">Step-Tronic</option>
           </select>
+          <div className="row my-5">
+            <div className="col-12">
+              <p className="my-2 text-xl">Pajisjet extra</p>
+            </div>
+            <div className="lg:col-4">
+              <div className="flex flex-col space-y-5">
+                {extrasList.slice(0, 13).map((extraItem) => (
+                  <ExtraCheckbox
+                    key={extraItem}
+                    name={extraItem}
+                    value={extraItem}
+                    onChange={handleCheck}
+                  />
+                ))}
+              </div>
+            </div>
+            <div className="lg:col-4 mt-5 lg:mt-0">
+              <div className="flex flex-col space-y-5">
+                {extrasList.slice(13, 26).map((extraItem) => (
+                  <ExtraCheckbox
+                    key={extraItem}
+                    name={extraItem}
+                    value={extraItem}
+                    onChange={handleCheck}
+                  />
+                ))}
+              </div>
+            </div>
+            <div className="lg:col-4 mt-5 lg:mt-0">
+              <div className="flex flex-col space-y-5">
+                {extrasList.slice(26, 39).map((extraItem) => (
+                  <ExtraCheckbox
+                    key={extraItem}
+                    name={extraItem}
+                    value={extraItem}
+                    onChange={handleCheck}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
           <p className="my-5">NEW / OLD / SOLD</p>
           <input type="radio" name="sale" value="0" onChange={(e) => setSale(e.target.value)} />
           <label htmlFor="sale">NEW</label>
