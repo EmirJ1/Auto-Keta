@@ -89,7 +89,7 @@ export default function AdminProductEdit({ product }) {
         sale,
       }
 
-      await axios.put('http://localhost:3000/api/cars/' + id, Product)
+      await axios.put('https://autoketa.mk/api/cars/' + id, Product)
       Router.push('/admin')
     } catch (err) {
       // eslint-disable-next-line no-console
@@ -268,7 +268,7 @@ export default function AdminProductEdit({ product }) {
 export async function getServerSideProps({ params }) {
   try {
     await dbConnect()
-    const res = await axios.get(`http://localhost:3000/api/cars/${params.id}`)
+    const res = await axios.get(`https://autoketa.mk/api/cars/${params.id}`)
     return {
       props: {
         product: res.data,

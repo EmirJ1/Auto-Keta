@@ -100,7 +100,7 @@ export default function Add({ setAdd }) {
         sale,
         extras,
       }
-      await axios.post('http://localhost:3000/api/cars', newProduct)
+      await axios.post('https://autoketa.mk/api/cars', newProduct)
       //   setAdd(true)
       Router.reload()
       //   setAdd(true)

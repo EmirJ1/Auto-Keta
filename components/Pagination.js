@@ -1,13 +1,13 @@
 //Pjesa ku i ndron facet next/previous
 import axios from 'axios'
 import Image from 'next/image'
+import Link from 'next/link'
 import Router from 'next/router'
 import React, { useState } from 'react'
 import SVG from 'react-inlinesvg'
 import usePagination from 'utils/usePagination'
 
 import Button from './Button'
-import ProductEdit from './ProductEdit'
 export default function Pagination({ cars }) {
   const lifo = cars.sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt))
   const _DATA = usePagination(lifo, 10)
@@ -43,7 +43,10 @@ export default function Pagination({ cars }) {
               <p>Created at: {car.createdAt}</p>
               <p>Updated at: {car.updatedAt}</p>
               <div className="flex flex-inline">
-                <ProductEdit product={car} />
+                <Link className="px-4 py-5 text-black rounded-xl" href={`/admin/edit/${car._id}`}>
+                  <SVG src="/svg/edit.svg" className="w-7 h-7" />
+                  Edit
+                </Link>
                 <button
                   className="ml-4 py-5 text-black px-3 rounded-xl"
                   onClick={() => handleDelete(car._id)}

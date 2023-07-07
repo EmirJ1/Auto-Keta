@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function EditInput({ name, label, onChange, value }) {
   return (
-    <div className="col-12">
+    <div className="lg:col-6">
       <label htmlFor={name} className="flex flex-col">
         {label}
       </label>

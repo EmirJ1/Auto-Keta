@@ -1,10 +1,12 @@
 //Facja e ni produkti si duket mrenda kur klikon te ni veture
+import 'react-responsive-carousel/lib/styles/carousel.min.css'
+
 import axios from 'axios'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import ReactImageGallery from 'react-image-gallery'
 import SVG from 'react-inlinesvg'
+import { Carousel } from 'react-responsive-carousel'
 import dbConnect from 'utils/mongo'
 
 import Layout2 from '@/components/layout/Layout2'
@@ -58,7 +60,7 @@ function GetRandomItem({ product }) {
 export default function Car({ car, products }) {
   const images = []
   for (let i = 0; i < car.images.length; i++) {
-    images.push({ original: car.images[i].url, thumbnail: car.images[i].url })
+    images.push(car.images[i].url)
   }
 
   return (
@@ -66,7 +68,19 @@ export default function Car({ car, products }) {
       <div className="container">
         <div className="row my-5">
           <div className="md:col-8">
-            <ReactImageGallery items={images} />
+            <Carousel showThumbs={false} infiniteLoop dynamicHeight={true}>
+              {images.map((image, index) => (
+                <div key={index} className="w-full h-3/4 object-cover">
+                  <Image
+                    src={image}
+                    alt="image"
+                    width={670}
+                    height={415}
+                    className="w-full h-3/4 object-cover"
+                  />
+                </div>
+              ))}
+            </Carousel>
           </div>
           <div className="md:col-4 py-4">
             <h2 className="text-3xl mx-20">Përshkrimi</h2>
