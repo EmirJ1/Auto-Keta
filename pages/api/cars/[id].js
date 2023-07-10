@@ -1,7 +1,6 @@
 //Konektimi ne database per ni produkt
-import dbConnect from '../../../utils/mongo'
-
-import Car from '../../../models/Car'
+import Car from 'models/Car'
+import dbConnect from 'utils/mongo'
 
 export default async function handler(req, res) {
   const {
